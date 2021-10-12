@@ -14,5 +14,6 @@ namespace CapaDatos
     {
         SqlConnection cn = new SqlConnection(@"Data Source=BRYAN;Initial Catalog=RRHHECU911;Integrated Security=True");
         
+        
     }
 }
