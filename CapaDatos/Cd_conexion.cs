@@ -12,7 +12,7 @@ namespace CapaDatos
 {
     public class Cd_conexion
     {
-        SqlConnection cn = new SqlConnection(@"Data Source=BRYAN;Initial Catalog=RRHHECU911;Integrated Security=True");
+        public SqlConnection cn = new SqlConnection(@"Data Source=DESKTOP-GH8860H\SQLEXPRESS;Initial Catalog=RRHHECU911;Integrated Security=True");
         
         
     }
