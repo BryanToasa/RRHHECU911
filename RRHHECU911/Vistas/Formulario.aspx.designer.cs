@@ -11,7 +11,7 @@ namespace RRHHECU911.Vistas
 {
 
 
-    public partial class Index
+    public partial class Formulario
     {
     }
 }

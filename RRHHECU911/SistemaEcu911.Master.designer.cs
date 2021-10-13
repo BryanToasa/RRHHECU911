@@ -11,7 +11,7 @@ namespace RRHHECU911
 {
 
 
-    public partial class VistaPersona
+    public partial class SistemaEcu911
     {
 
         /// <summary>
@@ -33,21 +33,12 @@ namespace RRHHECU911
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control ContentPlaceHolder1.
+        /// Control cphContenido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
-
-        /// <summary>
-        /// Control ContentPlaceHolder2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder2;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder cphContenido;
     }
 }

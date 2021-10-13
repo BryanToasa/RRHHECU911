@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace RRHHECU911
 {
-    public partial class VistaPersona : System.Web.UI.MasterPage
+    public partial class SistemaEcu911 : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
