@@ -10,7 +10,7 @@
             </div>
             <div class="card-body">
                 <div class="form-validation">
-                    <form class="form-valide" action="#" method="post">
+                    
                         <div class="row">
                             <div class="col-xl-6">
                                 <div class="form-group row">
@@ -19,7 +19,8 @@
                                                         <span class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-6">
-                                        <input type="text" class="form-control" id="Nombre" name="Nombre" placeholder="Nombre">
+                                        <asp:TextBox ID="Nombre_car" runat="server" class="form-control" name="Nombre_car" placeholder="Ingrese el cargo"></asp:TextBox>
+                                        
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -28,7 +29,8 @@
                                                         <span class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-6">
-                                        <input type="text" class="form-control" id="Nombre2" name="Nombre2" placeholder="Segundo Nombre">
+                                        <asp:TextBox ID="Estado_car" runat="server" class="form-control" name="Estado_car" placeholder="*"></asp:TextBox>
+                                        
                                     </div>
                                 </div>
                                  <div class="form-group row">
@@ -37,7 +39,8 @@
                                                         <span class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-6">
-                                        <input type="text" class="form-control" id="Apellido" name="Apellido" placeholder="Apellido">
+                                        <asp:TextBox ID="txtFecha" runat="server" TextMode="Date" placeholder="Ingrese la Fecha"></asp:TextBox>
+                                        
                                     </div>
                                 </div>
                                  <div class="form-group row">
@@ -161,17 +164,21 @@
                                         <label class="css-control css-control-primary css-checkbox" for="val-terms">
                                             <input type="checkbox" class="css-control-input mr-2"
                                                 id="val-terms" name="val-terms" value="1">
-                                            <span class="css-control-indicator"></span>Esto no cacho si sirve pero derrepente ;v</label>
+                                            <span class="css-control-indicator"></span>Esto no cacho si sirve pero derrepente ;v</label>                              
+
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-lg-8 ml-auto">
-                                        <button type="submit" class="btn btn-primary">Registrar</button>
+                                        <asp:Button ID="Registar" runat="server" Text="Registrar" class="btn btn-primary" OnClick="Registar_Click" />
+
+
+                                        
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </form>
+                 
                 </div>
             </div>
         </div>

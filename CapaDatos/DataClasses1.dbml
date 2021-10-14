@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="RRHHECU911" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-GH8860H\SQLEXPRESS;Initial Catalog=RRHHECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="RRHHECU911ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Tbl_CargoInstitucional" Member="Tbl_CargoInstitucional">
+    <Type Name="Tbl_CargoInstitucional">
+      <Column Name="CargoIntsi_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CargoInsti_nom" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CargoInsti_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_CargoInstitucional_Tbl_Personas" Member="Tbl_Personas" ThisKey="CargoIntsi_id" OtherKey="CargoInsti_id" Type="Tbl_Personas" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_Zona" Member="Tbl_Zona">
+    <Type Name="Tbl_Zona">
+      <Column Name="Zona_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Zona_nom" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Zona_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_Zona_Tbl_Personas" Member="Tbl_Personas" ThisKey="Zona_id" OtherKey="Zona_id" Type="Tbl_Personas" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_CorreoIntitucional" Member="Tbl_CorreoIntitucional">
+    <Type Name="Tbl_CorreoIntitucional">
+      <Column Name="CorreoInts_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CorreoInts_nom" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CorreoInst_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_CorreoIntitucional_Tbl_Personas" Member="Tbl_Personas" ThisKey="CorreoInts_id" OtherKey="CorreoInts_id" Type="Tbl_Personas" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_DireccionInstitucional" Member="Tbl_DireccionInstitucional">
+    <Type Name="Tbl_DireccionInstitucional">
+      <Column Name="DirInsti_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DirInsti_nom" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DirInsti_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_DireccionInstitucional_Tbl_Personas" Member="Tbl_Personas" ThisKey="DirInsti_Id" OtherKey="DirInsti_Id" Type="Tbl_Personas" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_Discapacidad" Member="Tbl_Discapacidad">
+    <Type Name="Tbl_Discapacidad">
+      <Column Name="Dis_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Dis_nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Dis_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="Tbl_Discapacidad_Tbl_Inicial" Member="Tbl_Inicial" ThisKey="Dis_id" OtherKey="Dis_id" Type="Tbl_Inicial" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_Emp_Per" Member="Tbl_Emp_Per">
+    <Type Name="Tbl_Emp_Per">
+      <Column Name="EmpPer_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Emp_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Tbl_Empresa_Tbl_Emp_Per" Member="Tbl_Empresa" ThisKey="Emp_id" OtherKey="Emp_id" Type="Tbl_Empresa" IsForeignKey="true" />
+      <Association Name="Tbl_Inicial_Tbl_Emp_Per" Member="Tbl_Inicial" ThisKey="Per_id" OtherKey="inicial_id" Type="Tbl_Inicial" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_Empresa" Member="Tbl_Empresa">
+    <Type Name="Tbl_Empresa">
+      <Column Name="Emp_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Emp_nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Emp_ruc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Emp_ciiu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Emp_estabSalud" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Emp_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="Tbl_Empresa_Tbl_Emp_Per" Member="Tbl_Emp_Per" ThisKey="Emp_id" OtherKey="Emp_id" Type="Tbl_Emp_Per" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_EstrcuturaUno" Member="Tbl_EstrcuturaUno">
+    <Type Name="Tbl_EstrcuturaUno">
+      <Column Name="EstructuraUno_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EstructuraUno_nom" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EstructuraUno_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_EstrcuturaUno_Tbl_Personas" Member="Tbl_Personas" ThisKey="EstructuraUno_id" OtherKey="EstructuraUno_id" Type="Tbl_Personas" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_EstructuraDos" Member="Tbl_EstructuraDos">
+    <Type Name="Tbl_EstructuraDos">
+      <Column Name="EstructuraDos_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EstructuraDos_nom" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EstructuraDos_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_EstructuraDos_Tbl_Personas" Member="Tbl_Personas" ThisKey="EstructuraDos_id" OtherKey="EstructuraDos_id" Type="Tbl_Personas" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_EstructuraProgramatica" Member="Tbl_EstructuraProgramatica">
+    <Type Name="Tbl_EstructuraProgramatica">
+      <Column Name="EstrucProgra_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EstrucProgra_nom" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EstrucProgra_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_EstructuraProgramatica_Tbl_Personas" Member="Tbl_Personas" ThisKey="EstrucProgra_id" OtherKey="EstrucProgra_id" Type="Tbl_Personas" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_Grado" Member="Tbl_Grado">
+    <Type Name="Tbl_Grado">
+      <Column Name="Grado_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Grado_Per" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="Tbl_Grado_Tbl_Personas" Member="Tbl_Personas" ThisKey="Grado_id" OtherKey="Grado_id" Type="Tbl_Personas" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_GrupoEtnico" Member="Tbl_GrupoEtnico">
+    <Type Name="Tbl_GrupoEtnico">
+      <Column Name="GrupoEtni_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GrupoEtni_nom" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="GrupoEtni_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_GrupoEtnico_Tbl_Personas" Member="Tbl_Personas" ThisKey="GrupoEtni_id" OtherKey="GrupoEtni_id" Type="Tbl_Personas" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_GrupoOcupacional" Member="Tbl_GrupoOcupacional">
+    <Type Name="Tbl_GrupoOcupacional">
+      <Column Name="GrpOcupacional_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GrpOcupacional_nom" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="Tbl_GrupoOcupacional_Tbl_Personas" Member="Tbl_Personas" ThisKey="GrpOcupacional_id" OtherKey="GrpOcupacional_id" Type="Tbl_Personas" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_Identidad_de_Genero" Member="Tbl_Identidad_de_Genero">
+    <Type Name="Tbl_Identidad_de_Genero">
+      <Column Name="IdtGen_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdtGen_nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IdtGen_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="Tbl_Identidad_de_Genero_Tbl_Inicial" Member="Tbl_Inicial" ThisKey="IdtGen_id" OtherKey="IdtGen_id" Type="Tbl_Inicial" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_Inicial" Member="Tbl_Inicial">
+    <Type Name="Tbl_Inicial">
+      <Column Name="inicial_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="inicial_edad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inicial_NumArchivo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Rel_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inicial_groSanguineo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="inicial_lateralidad" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="OrSex_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdtGen_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dis_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inicial_fechIngTrabajo" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="inicial_fechSalida" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inicial_tiempo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inicial_puesTrabajo" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="inicial_Actividades" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="inicial_facRiesgo" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="inicial_areaTrabajo" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="inicial_actsRelevantes" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Act_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FacR_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inicial_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_Inicial_Tbl_Emp_Per" Member="Tbl_Emp_Per" ThisKey="inicial_id" OtherKey="Per_id" Type="Tbl_Emp_Per" />
+      <Association Name="Tbl_Inicial_Tbl_Personas" Member="Tbl_Personas" ThisKey="inicial_id" OtherKey="inicial_id" Type="Tbl_Personas" />
+      <Association Name="Tbl_Discapacidad_Tbl_Inicial" Member="Tbl_Discapacidad" ThisKey="Dis_id" OtherKey="Dis_id" Type="Tbl_Discapacidad" IsForeignKey="true" />
+      <Association Name="Tbl_Identidad_de_Genero_Tbl_Inicial" Member="Tbl_Identidad_de_Genero" ThisKey="IdtGen_id" OtherKey="IdtGen_id" Type="Tbl_Identidad_de_Genero" IsForeignKey="true" />
+      <Association Name="Tbl_OrientacionSexual_Tbl_Inicial" Member="Tbl_OrientacionSexual" ThisKey="OrSex_id" OtherKey="OrSex_id" Type="Tbl_OrientacionSexual" IsForeignKey="true" />
+      <Association Name="Tbl_Religion_Tbl_Inicial" Member="Tbl_Religion" ThisKey="Rel_id" OtherKey="Rel_id" Type="Tbl_Religion" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_ModalidadLaboral" Member="Tbl_ModalidadLaboral">
+    <Type Name="Tbl_ModalidadLaboral">
+      <Column Name="Per_modLaboral_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Per_modLaboral_nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Per_modLaboral_Estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="Tbl_ModalidadLaboral_Tbl_Personas" Member="Tbl_Personas" ThisKey="Per_modLaboral_id" OtherKey="Per_modLaboral_id" Type="Tbl_Personas" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_OrientacionSexual" Member="Tbl_OrientacionSexual">
+    <Type Name="Tbl_OrientacionSexual">
+      <Column Name="OrSex_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OrSex_nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="OrSex_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="Tbl_OrientacionSexual_Tbl_Inicial" Member="Tbl_Inicial" ThisKey="OrSex_id" OtherKey="OrSex_id" Type="Tbl_Inicial" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_Personas" Member="Tbl_Personas">
+    <Type Name="Tbl_Personas">
+      <Column Name="Per_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Per_Cedula" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Per_priNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Per_segNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Per_priApellido" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Per_segApellido" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Per_fechNacimiento" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Zona_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DirInsti_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sede_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProcesoInt_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EstrucProgra_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Per_fechInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Per_fechDesde" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Per_fechHasta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EstructuraUno_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EstructuraDos_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Rmu_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Grado_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GrpOcupacional_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CargoInsti_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GrupoEtni_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Per_modLaboral_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Per_numContrato" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Per_partiGeneral" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Per_partiIndividual" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Per_genero" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="Per_discapacidad" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Per_motivoSalida" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CorreoInts_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TelfInts_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Per_numCelular" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Per_dirDomicilio" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Per_correoPersonal" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Per_instrucFormal" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Per_añosExperiencia" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Per_comServicios" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Per_oriDesComision" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Per_fechComiDesde" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Per_fechComiHasta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Per_nomPerContacEmergencia" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Per_numPerContacEmergencia" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Per_observaciones" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="inicial_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Per_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_CargoInstitucional_Tbl_Personas" Member="Tbl_CargoInstitucional" ThisKey="CargoInsti_id" OtherKey="CargoIntsi_id" Type="Tbl_CargoInstitucional" IsForeignKey="true" />
+      <Association Name="Tbl_CorreoIntitucional_Tbl_Personas" Member="Tbl_CorreoIntitucional" ThisKey="CorreoInts_id" OtherKey="CorreoInts_id" Type="Tbl_CorreoIntitucional" IsForeignKey="true" />
+      <Association Name="Tbl_DireccionInstitucional_Tbl_Personas" Member="Tbl_DireccionInstitucional" ThisKey="DirInsti_Id" OtherKey="DirInsti_Id" Type="Tbl_DireccionInstitucional" IsForeignKey="true" />
+      <Association Name="Tbl_EstructuraProgramatica_Tbl_Personas" Member="Tbl_EstructuraProgramatica" ThisKey="EstrucProgra_id" OtherKey="EstrucProgra_id" Type="Tbl_EstructuraProgramatica" IsForeignKey="true" />
+      <Association Name="Tbl_EstructuraDos_Tbl_Personas" Member="Tbl_EstructuraDos" ThisKey="EstructuraDos_id" OtherKey="EstructuraDos_id" Type="Tbl_EstructuraDos" IsForeignKey="true" />
+      <Association Name="Tbl_EstrcuturaUno_Tbl_Personas" Member="Tbl_EstrcuturaUno" ThisKey="EstructuraUno_id" OtherKey="EstructuraUno_id" Type="Tbl_EstrcuturaUno" IsForeignKey="true" />
+      <Association Name="Tbl_Grado_Tbl_Personas" Member="Tbl_Grado" ThisKey="Grado_id" OtherKey="Grado_id" Type="Tbl_Grado" IsForeignKey="true" />
+      <Association Name="Tbl_GrupoOcupacional_Tbl_Personas" Member="Tbl_GrupoOcupacional" ThisKey="GrpOcupacional_id" OtherKey="GrpOcupacional_id" Type="Tbl_GrupoOcupacional" IsForeignKey="true" />
+      <Association Name="Tbl_GrupoEtnico_Tbl_Personas" Member="Tbl_GrupoEtnico" ThisKey="GrupoEtni_id" OtherKey="GrupoEtni_id" Type="Tbl_GrupoEtnico" IsForeignKey="true" />
+      <Association Name="Tbl_Inicial_Tbl_Personas" Member="Tbl_Inicial" ThisKey="inicial_id" OtherKey="inicial_id" Type="Tbl_Inicial" IsForeignKey="true" />
+      <Association Name="Tbl_ModalidadLaboral_Tbl_Personas" Member="Tbl_ModalidadLaboral" ThisKey="Per_modLaboral_id" OtherKey="Per_modLaboral_id" Type="Tbl_ModalidadLaboral" IsForeignKey="true" />
+      <Association Name="Tbl_Zona_Tbl_Personas" Member="Tbl_Zona" ThisKey="Zona_id" OtherKey="Zona_id" Type="Tbl_Zona" IsForeignKey="true" />
+      <Association Name="Tbl_ProcesoInterno_Tbl_Personas" Member="Tbl_ProcesoInterno" ThisKey="ProcesoInt_id" OtherKey="ProcesoInt_id" Type="Tbl_ProcesoInterno" IsForeignKey="true" />
+      <Association Name="Tbl_Rmu_Tbl_Personas" Member="Tbl_Rmu" ThisKey="Rmu_id" OtherKey="Rmu_id" Type="Tbl_Rmu" IsForeignKey="true" />
+      <Association Name="Tbl_Sede_Tbl_Personas" Member="Tbl_Sede" ThisKey="Sede_id" OtherKey="Sede_id" Type="Tbl_Sede" IsForeignKey="true" />
+      <Association Name="Tbl_TelefonoIntitucional_Tbl_Personas" Member="Tbl_TelefonoIntitucional" ThisKey="TelfInts_id" OtherKey="TelfInts_id" Type="Tbl_TelefonoIntitucional" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_ProcesoInterno" Member="Tbl_ProcesoInterno">
+    <Type Name="Tbl_ProcesoInterno">
+      <Column Name="ProcesoInt_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProcesoInt_nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ProcesoInt_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_ProcesoInterno_Tbl_Personas" Member="Tbl_Personas" ThisKey="ProcesoInt_id" OtherKey="ProcesoInt_id" Type="Tbl_Personas" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_Religion" Member="Tbl_Religion">
+    <Type Name="Tbl_Religion">
+      <Column Name="Rel_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Rel_nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Rel_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="Tbl_Religion_Tbl_Inicial" Member="Tbl_Inicial" ThisKey="Rel_id" OtherKey="Rel_id" Type="Tbl_Inicial" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_Rmu" Member="Tbl_Rmu">
+    <Type Name="Tbl_Rmu">
+      <Column Name="Rmu_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Rmu_val" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Rmu_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_Rmu_Tbl_Personas" Member="Tbl_Personas" ThisKey="Rmu_id" OtherKey="Rmu_id" Type="Tbl_Personas" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_Sede" Member="Tbl_Sede">
+    <Type Name="Tbl_Sede">
+      <Column Name="Sede_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Sede_nom" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Sede_Estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_Sede_Tbl_Personas" Member="Tbl_Personas" ThisKey="Sede_id" OtherKey="Sede_id" Type="Tbl_Personas" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_TelefonoIntitucional" Member="Tbl_TelefonoIntitucional">
+    <Type Name="Tbl_TelefonoIntitucional">
+      <Column Name="TelfInts_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TelfInts_num" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TelfInts_exten" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TelfInst_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_TelefonoIntitucional_Tbl_Personas" Member="Tbl_Personas" ThisKey="TelfInts_id" OtherKey="TelfInts_id" Type="Tbl_Personas" />
+    </Type>
+  </Table>
+  <Function Name="dbo.Registro_CargoInstitucional" Method="Registro_CargoInstitucional">
+    <Parameter Name="CargoInsti_nom" Parameter="cargoInsti_nom" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CargoInsti_estado" Parameter="cargoInsti_estado" Type="System.String" DbType="VarChar(1)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Actualizar_CargoInstitucional" Method="Actualizar_CargoInstitucional">
+    <Parameter Name="CargoInsti_id" Parameter="cargoInsti_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CargoInsti_nom" Parameter="cargoInsti_nom" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CargoInsti_estado" Parameter="cargoInsti_estado" Type="System.String" DbType="VarChar(1)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Buscar_CargoInstitucional" Method="Buscar_CargoInstitucional">
+    <Parameter Name="CargoInsti_id" Parameter="cargoInsti_id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Buscar_CargoInstitucionalResult">
+      <Column Name="CargoIntsi_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CargoInsti_nom" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CargoInsti_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Eliminar_CargoInstitucional" Method="Eliminar_CargoInstitucional">
+    <Parameter Name="CargoInsti_id" Parameter="cargoInsti_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Listar_CargoInstitucional" Method="Listar_CargoInstitucional">
+    <ElementType Name="Listar_CargoInstitucionalResult">
+      <Column Name="CargoIntsi_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CargoInsti_nom" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CargoInsti_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
