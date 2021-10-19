@@ -1,0 +1,144 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Dashboard.master.cs" Inherits="RRHHECU911.Dashboard" %>
+
+<%@ Register Src="~/includes/menu-top.ascx" TagPrefix="uc1" TagName="menutop" %>
+<%@ Register Src="~/includes/sidebar.ascx" TagPrefix="uc1" TagName="sidebar" %>
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href='<%= Page.ResolveUrl("~/assets/images/favicon.png") %>'>
+    <title>
+        ECU 666 | <asp:ContentPlaceHolder ID="chp_title" runat="server"></asp:ContentPlaceHolder>
+    </title>
+    <!-- Bootstrap Core CSS -->
+    <link href='<%= Page.ResolveUrl("~/assets/plugins/bootstrap/css/bootstrap.min.css") %>' rel="stylesheet">
+
+    <!-- Styles wareber -->
+    <asp:ContentPlaceHolder ID="chp_styles" runat="server"></asp:ContentPlaceHolder>
+
+    <!-- Custom CSS -->
+    <link href='<%= Page.ResolveUrl("~/css/style.css") %>' rel="stylesheet" >
+  
+    <!-- You can change the theme colors from here -->
+    <link href='<%= Page.ResolveUrl("~/css/colors/default-dark.css") %>' id="theme" rel="stylesheet">
+   
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js'></script>
+    <script src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js'></script>
+<![endif]-->
+</head>
+
+<body class="fix-header card-no-border fix-sidebar">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">Admin Pro</p>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <form runat="server" id="form01110101">
+            
+        <!-- Menu top -->
+            <uc1:menutop runat="server" id="menutop" />
+
+        <!-- Sidebar izquierda -->
+            <uc1:sidebar runat="server" id="sidebar" />
+
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <div class="row page-titles">
+                    <asp:ContentPlaceHolder ID="chp_breadcrumb" runat="server"></asp:ContentPlaceHolder>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+
+                <asp:ContentPlaceHolder ID="chp_contenido" runat="server"></asp:ContentPlaceHolder>
+
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+                               
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer">
+                © 2021 Admin Pro by gabriel salas
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+        </form>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src='<%= Page.ResolveUrl("~/assets/plugins/jquery/jquery.min.js") %>'></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src='<%= Page.ResolveUrl("~/assets/plugins/bootstrap/js/popper.min.js") %>'></script>
+    <script src='<%= Page.ResolveUrl("~/assets/plugins/bootstrap/js/bootstrap.min.js") %>'></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src='<%= Page.ResolveUrl("~/js/perfect-scrollbar.jquery.min.js") %>'></script>
+    <!--Wave Effects -->
+    <script src='<%= Page.ResolveUrl("~/js/waves.js") %>'></script>
+    <!--Menu sidebar -->
+    <script src='<%= Page.ResolveUrl("~/js/sidebarmenu.js") %>'></script>
+    <!--stickey kit -->
+    <script src='<%= Page.ResolveUrl("~/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js") %>'></script>
+    <script src='<%= Page.ResolveUrl("~/assets/plugins/sparkline/jquery.sparkline.min.js") %>'></script>
+    <!--Custom JavaScript -->
+    <script src='<%= Page.ResolveUrl("~/js/custom.min.js") %>'></script>
+    <!-- Scripts plus -->
+    <asp:ContentPlaceHolder ID="chp_scripts" runat="server">
+
+    </asp:ContentPlaceHolder>
+    <!-- ============================================================== -->
+    <!-- Style switcher -->
+    <!-- ============================================================== -->
+    <script src='<%= Page.ResolveUrl("~/assets/plugins/styleswitcher/jQuery.style.switcher.js") %>'></script>
+</body>
+
+</html>
