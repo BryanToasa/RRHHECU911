@@ -36,9 +36,9 @@
                                 <li><a href="/dashboard/person/add">Nueva persona</a></li>
                             </ul>
                         </li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-email"></i><span class="hide-menu">Inbox</span></a>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-email"></i><span class="hide-menu">Data Persona</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="app-email.html">Mailbox</a></li>
+                                <li><a href="/dashboard/data/cargo">Cargo</a></li>
                                 <li><a href="app-email-detail.html">Mailbox Detail</a></li>
                                 <li><a href="app-compose.html">Compose Mail</a></li>
                             </ul>

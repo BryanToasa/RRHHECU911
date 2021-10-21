@@ -3403,6 +3403,7 @@
     <Content Include="vistas\auth\Login.aspx" />
     <Content Include="vistas\auth\Register.aspx" />
     <Content Include="vistas\dashboard.aspx" />
+    <Content Include="vistas\data\cargo.aspx" />
     <Content Include="vistas\person\delete.aspx" />
     <Content Include="vistas\person\edit.aspx" />
     <Content Include="vistas\person\index.aspx" />
@@ -3488,6 +3489,13 @@
     </Compile>
     <Compile Include="vistas\dashboard.aspx.designer.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vistas\data\cargo.aspx.cs">
+      <DependentUpon>cargo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vistas\data\cargo.aspx.designer.cs">
+      <DependentUpon>cargo.aspx</DependentUpon>
     </Compile>
     <Compile Include="vistas\person\delete.aspx.cs">
       <DependentUpon>delete.aspx</DependentUpon>
