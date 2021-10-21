@@ -61,7 +61,7 @@
                                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                                     <h4 class="modal-title" id="myModalLabel">Nuevo Cargo</h4>
                                                 </div>
-                                                <!--AQUI EDITAS EL CUADRO DE AGREGAR NUEVO CARGO-->   
+                                                <!--AQUI EDITAS EL CUADRO DE AGREGAR NUEVO CARGoO-->   
                                                 
 
                                                 <div class="modal-body">
