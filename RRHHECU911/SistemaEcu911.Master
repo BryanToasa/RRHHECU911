@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SistemaEcu911.master.cs" Inherits="RRHHECU911.SistemaEcu911" %>
+﻿<%--<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SistemaEcu911.master.cs" Inherits="RRHHECU911.SistemaEcu911" %>--%>
 
 <!DOCTYPE html>
 
