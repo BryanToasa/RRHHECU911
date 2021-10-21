@@ -41,7 +41,7 @@
                 <div class="card-body">
                     <h4 class="card-title">Step wizard with validation</h4>
                     <h6 class="card-subtitle">You can us the validation like what we did</h6>
-                    <form action="#" class="validation-wizard wizard-circle">
+                    <div action="#" class="validation-wizard wizard-circle">
                         <!-- Step 1 -->
                         <h6>Step 1</h6>
                         <section>
@@ -221,7 +221,7 @@
                                 </div>
                             </div>
                         </section>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>

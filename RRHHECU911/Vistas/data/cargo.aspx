@@ -38,7 +38,7 @@
                                     <td>1</td>
                                     <td>
                                         <a href="javascript:void(0)">
-                                            <img src="../assets/images/users/4.jpg" alt="user" width="40" class="img-circle" />
+                                            <img src='<%= Page.ResolveUrl("~/assets/images/users/4.jpg") %>' alt="user" width="40" class="img-circle" />
                                             Genelia Deshmukh</a>
                                     </td>
                                     <td>genelia@gmail.com</td>
@@ -286,7 +286,7 @@
                                                     <h4 class="modal-title" id="myModalLabel">Add New Contact</h4>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <from class="form-horizontal form-material">
+                                                    <div class="form-horizontal form-material">
                                                         <div class="form-group">
                                                             <div class="col-md-12 m-b-20">
                                                                 <input type="text" class="form-control" placeholder="Type name">
@@ -316,7 +316,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </from>
+                                                    </div>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-info waves-effect" data-dismiss="modal">Save</button>
@@ -347,5 +347,5 @@
     <script src='<%= Page.ResolveUrl("~/assets/plugins/footable/js/footable.all.min.js") %>'></script>
     <script src='<%= Page.ResolveUrl("~/assets/plugins/bootstrap-select/bootstrap-select.min.js") %>' type="text/javascript"></script>
     <!--FooTable init-->
-    <script src='<%= Page.ResolveUrl("~/js/footable-init.js") %>'></script>
+    <script src='<%= Page.ResolveUrl("/js/footable-init.js") %>'></script>
 </asp:Content>
