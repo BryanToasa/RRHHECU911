@@ -121,8 +121,7 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-info waves-effect" data-dismiss="modal">Save</button>
-                    <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
+                    <asp:Button ID="Button1" runat="server" Text="Guardar" OnClick="Button1_Click" CssClass="btn btn-info" />
                     <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cancel</button>
                 </div>
             </div>
