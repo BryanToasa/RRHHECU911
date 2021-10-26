@@ -8,6 +8,10 @@
     <link href='<%= Page.ResolveUrl("~/assets/plugins/bootstrap-select/bootstrap-select.min.css")%>' rel="stylesheet">
      <link href='<%= Page.ResolveUrl("~/assets/plugins/bootstrap-switch/bootstrap-switch.min.css")%>' rel="stylesheet">
      <link href='<%= Page.ResolveUrl("~/css/pages/bootstrap-switch.css")%>' rel="stylesheet">
+        <link href='<%= Page.ResolveUrl("~/assets/plugins/toast-master/css/jquery.toast.css")%>' rel="stylesheet">
+        <link href='<%= Page.ResolveUrl("~/css/pages/other-pages.css")%>' rel="stylesheet">
+
+
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="chp_breadcrumb" runat="server">
@@ -120,8 +124,8 @@
 
                 </div>
                 <div class="modal-footer">                
-                    <asp:Button ID="Button1" runat="server" Text="Guardar" OnClick="Button1_Click" CssClass="btn btn-info" />
-                    <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cancelar</button>
+                    <asp:Button ID="Button1" runat="server" Text="Guardar" OnClick="Button1_Click" CssClass="tst3 btn btn-success"  />
+                    <button type="button" class="tst4 btn btn-danger" data-dismiss="modal">Cancelar</button>
                 </div>
             </div>
             <!-- /.modal-content -->
@@ -159,4 +163,8 @@
         radioswitch.init()
     });
     </script>
+    <script src='<%= Page.ResolveUrl("~/assets/plugins/toast-master/js/jquery.toast.js")%>'></script>
+    <script src='<%= Page.ResolveUrl("~/js/toastr.js")%>'></script>
+    <script src='<%= Page.ResolveUrl("~/assets/plugins/styleswitcher/jQuery.style.switcher.js")%>'></script>
+
 </asp:Content>
