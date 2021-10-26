@@ -25,7 +25,7 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="chp_contenido" runat="server">
-    <div class="row">
+     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
@@ -38,73 +38,50 @@
                                     <th>Id</th>
                                     <th>Zona</th>
                                     <th>Estado</th>
-                                    <th></th>                                      
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <!--AQUI ESTA LA PRIMER FILA DE LA TABLA Zona-->
+                                    <!--AQUI ESTA LA PRIMER FILA DE LA TABLA ZONA-->
                                     <td>1</td>
                                     <td>genelia@gmail.com</td>
                                     <td>
-                                        <input id="cb_estado_zona" type="checkbox" data-on-text="Long Text"/> 
+                                        <div class="bt-switch">
+                                            <div class="m-b-30">
+                                                <input type="checkbox" checked data-on-color="warning" data-off-color="danger" data-on-text="Enabled" data-off-text="Disabled" />
+                                            </div>
+                                        </div>
+
                                     </td>
                                     <td>
-                                        <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
+                                        <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete">
+                                            <i class="ti-close" aria-hidden="true"></i>
+                                        </button>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
                                     <td>arijit@gmail.com</td>
-                                    <td>Estado2</td>
+                                    <td>
+                                         <div class="bt-switch">
+                                            <div class="m-b-30">
+                                                <input type="checkbox" checked data-on-color="warning" data-off-color="danger" data-on-text="Enabled" data-off-text="Disabled" />
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td>
                                         <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
                                     </td>
                                 </tr>
 
-
                             </tbody>
-                            
                             <tfoot>
-                               
                                 <tr>
                                     <td colspan="2">
                                         <button type="button" class="btn btn-info btn-rounded" data-toggle="modal" data-target="#add-contact">Agregar nuevo contacto</button>
                                     </td>
-                                    <div id="add-contact" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                    <h4 class="modal-title" id="myModalLabel">Nuevo Cargo</h4>
-                                                </div>
-                                                <!--AQUI EDITAS EL CUADRO DE AGREGAR NUEVO ZONA-->   
-                                                
 
-                                                <div class="modal-body">
-                                                    <div class="form-horizontal form-material">
-                                                        <div class="form-group">
-                                                            <div class="col-md-12 m-b-20">
-                                                                 <!--AQUI EDITAS EL CUADRO DE Nombre NUEVO ZONA-->
-                                                                <input type="text" class="form-control" placeholder="Type name">
-                                                            </div>
-                                                             <div class="col-md-12 m-b-20">
-                                                                 <!--AQUI EDITAS EL CUADRO DE Nombre NUEVO ZONA-->
-                                                                <input type="text" class="form-control" placeholder="Type name">
-                                                            </div>                                                            
-                                                        </div>
-                                                    </div>
-                                                   
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-info waves-effect" data-dismiss="modal">Guardar</button>
-                                                    <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cancelar</button>
-                                                </div>
-                                            </div>
-                                            <!-- /.modal-content -->
-                                        </div>
-                                        <!-- /.modal-dialog -->
-                                    </div>
                                     <td colspan="7">
                                         <div class="text-right">
                                             <ul class="pagination"></ul>
@@ -112,12 +89,44 @@
                                     </td>
                                 </tr>
                             </tfoot>
-                           
+
                         </table>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div id="add-contact" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="myModalLabel">Nueva Zona</h4>
+                </div>
+                <!--AQUI EDITAS EL CUADRO DE AGREGAR NUEVO ZONA-->
+                <div class="modal-body">
+                    <div class="form-horizontal form-material">
+                        <div class="form-group">
+                            <div class="col-md-12 m-b-20">
+                                <!--AQUI EDITAS EL CUADRO DE ID NUEVO ZONA-->
+                                <input type="text" class="form-control" placeholder="Nuevo Id">
+                            </div>
+                            <div class="col-md-12 m-b-20">
+                                <!--AQUI EDITAS EL CUADRO DE CARGO NUEVO ZONA-->
+                                <input type="text" class="form-control" placeholder="Nuevo Zona">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">                
+                    <asp:Button ID="Button1" runat="server" Text="Guardar" OnClick="Button1_Click" CssClass="btn btn-info" />
+                    <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
     </div>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="chp_scripts" runat="server">
