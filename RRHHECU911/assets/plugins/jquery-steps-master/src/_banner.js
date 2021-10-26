@@ -34,4 +34,3 @@
  * @requires jQuery (always required), jQuery.cookie (only required if saveState is `true`)
  */
 ;(function ($, undefined)
-{
