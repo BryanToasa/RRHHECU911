@@ -36,41 +36,7 @@
                 <div class="card-body">
                     <h4 class="card-title">Column Toggle Table</h4>
                     <h6 class="card-subtitle">The Column Toggle Table allows the user to select which columns they want to be visible.</h6>
-                    <asp:GridView ID="grvCargo" OnRowCommand="grvCargo_RowCommand" AutoGenerateColumns="false" CssClass="table table-hover text-center table-responsive" GridLines="None" runat="server">
-                        <Columns>
-                            <asp:TemplateField HeaderText="Codigo">
-                                <ItemTemplate>
-                                    <asp:Label ID="id_cargo" runat="server" Text='<%#Eval("CargoIntsi_id")%>'></asp:Label>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Nombres">
-                                <ItemTemplate>
-                                    <asp:Label ID="Nombre_cargo" runat="server" Text='<%#Eval("CargoInsti_nom")%>'></asp:Label>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="estado">
-                                <ItemTemplate>
-                                    <asp:Label ID="estado" runat="server" Text='<%#Eval("CargoInsti_estado")%>'></asp:Label>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-
-                            
-                            <asp:TemplateField ItemStyle-Width="17" HeaderStyle-Width="17">
-                                <ItemTemplate>
-                                    <asp:LinkButton ID="lnbEliminar" Width="16" Height="16" CommandArgument='<%#Eval("CargoIntsi_id")%>' CommandName="Eliminar" OnClientClick="return confirm('Esta seguro que desea eliminar este registro..')" runat="server"><i class="fas fa-trash"></i></asp:LinkButton>
-                                </ItemTemplate>
-                                <HeaderStyle Width="17px" />
-                                <ItemStyle Width="17px" />
-                            </asp:TemplateField>
-                            <asp:TemplateField ItemStyle-Width="17" HeaderStyle-Width="17">
-                                <ItemTemplate>
-                                    <asp:LinkButton ID="lnbActualizar" Width="16" Height="16" CommandArgument='<%#Eval("CargoIntsi_id")%>' CommandName="Actualizar" OnClientClick="return confirm('Esta seguro que desea Actualizar este registro..')" runat="server"><i class="fas fa-check"></i></asp:LinkButton>
-                                </ItemTemplate>
-                                <HeaderStyle Width="17px" />
-                                <ItemStyle Width="17px" />
-                            </asp:TemplateField>
-                        </Columns>
-                    </asp:GridView>
+                   
 
                     <table class="tablesaw table-striped table-hover table-bordered table" data-tablesaw-mode="columntoggle">
                         <thead>

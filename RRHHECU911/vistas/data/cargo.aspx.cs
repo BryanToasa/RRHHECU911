@@ -11,7 +11,12 @@ namespace RRHHECU911.vistas.data
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados')", true);
+        }
 
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            //Message.Text = "Hello World!!";
         }
     }
 }
