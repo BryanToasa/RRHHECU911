@@ -8,12 +8,12 @@
 </asp:Content>
 
 <asp:Content ID="Content12" ContentPlaceHolderID="chp_scripts" runat="server">
-     <script src='<%= Page.ResolveUrl("~/assets/plugins/moment/min/moment.min.js") %>'></script>
-    <script src='<%= Page.ResolveUrl("~/assets/plugins/wizard/jquery.steps.min.js") %>'></script>
-    <script src='<%= Page.ResolveUrl("~/assets/plugins/wizard/jquery.validate.min.js") %>'></script>
+     <script src='<%= Page.ResolveUrl("~/assets/plugins/moment/min/moment.min.js")%>'></script>
+    <script src='<%= Page.ResolveUrl("~/assets/plugins/wizard/jquery.steps.min.js")%>'></script>
+    <script src='<%= Page.ResolveUrl("~/assets/plugins/wizard/jquery.validate.min.js")%>'></script>
     <!-- Sweet-Alert  -->
-    <script src='<%= Page.ResolveUrl("~/assets/plugins/sweetalert/sweetalert.min.js") %>'></script>
-    <script src='<%= Page.ResolveUrl("~/assets/plugins/wizard/steps.js") %>'></script>
+    <script src='<%= Page.ResolveUrl("~/assets/plugins/sweetalert/sweetalert.min.js")%>'></script>
+    <script src='<%= Page.ResolveUrl("~/assets/plugins/wizard/steps.js")%>'></script>
 </asp:Content>
 
 

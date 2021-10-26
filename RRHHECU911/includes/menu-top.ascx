@@ -220,7 +220,7 @@
                                     <li class="col-lg-3  m-b-30">
                                         <h4 class="m-b-20">CONTACT US</h4>
                                         <!-- Contact -->
-                                        <form>
+                                        <div>
                                             <div class="form-group">
                                                 <input type="text" class="form-control" id="exampleInputname1" placeholder="Enter Name"> </div>
                                             <div class="form-group">
@@ -229,7 +229,7 @@
                                                 <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Message"></textarea>
                                             </div>
                                             <button type="submit" class="btn btn-info">Submit</button>
-                                        </form>
+                                        </div>
                                     </li>
                                     <li class="col-lg-3 col-xlg-4 m-b-30">
                                         <h4 class="m-b-20">List style</h4>
