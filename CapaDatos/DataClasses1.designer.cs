@@ -315,17 +315,17 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Registro_CargoInstitucional")]
-		public int Registro_CargoInstitucional([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CargoInsti_nom", DbType="VarChar(100)")] string cargoInsti_nom, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CargoInsti_estado", DbType="VarChar(1)")] string cargoInsti_estado)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cargoInsti_nom, cargoInsti_estado);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Actualizar_CargoInstitucional")]
 		public int Actualizar_CargoInstitucional([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CargoInsti_id", DbType="Int")] System.Nullable<int> cargoInsti_id, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CargoInsti_nom", DbType="VarChar(100)")] string cargoInsti_nom, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CargoInsti_estado", DbType="VarChar(1)")] string cargoInsti_estado)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cargoInsti_id, cargoInsti_nom, cargoInsti_estado);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Registro_CorreoIntitucional")]
+		public int Registro_CorreoIntitucional([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CorreoIn_nom", DbType="VarChar(100)")] string correoIn_nom, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CorreoIn_estado", DbType="VarChar(1)")] string correoIn_estado)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), correoIn_nom, correoIn_estado);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -348,6 +348,13 @@ namespace CapaDatos
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<Listar_CargoInstitucionalResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Registro_CargoInstitucional")]
+		public int Registro_CargoInstitucional([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CargoInsti_nom", DbType="VarChar(100)")] string cargoInsti_nom, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CargoInsti_estado", DbType="VarChar(1)")] string cargoInsti_estado)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cargoInsti_nom, cargoInsti_estado);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	

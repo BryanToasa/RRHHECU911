@@ -25,6 +25,7 @@
     </div>
 
 </asp:Content>
+
 <asp:Content ID="Content4" ContentPlaceHolderID="chp_contenido" runat="server">
     <div class="row">
         <div class="col-12">
@@ -87,11 +88,14 @@
                                         <div class="text-right">
                                             <ul class="pagination"></ul>
                                         </div>
+                                        
                                     </td>
+                                   
                                 </tr>
                             </tfoot>
 
                         </table>
+
                     </div>
                 </div>
             </div>
@@ -110,18 +114,19 @@
                         <div class="form-group">
                             <div class="col-md-12 m-b-20">
                                 <!--AQUI EDITAS EL CUADRO DE ID NUEVO CARGO-->
-                                <input type="text" class="form-control" placeholder="Nuevo Id">
-                            </div>
+                               <asp:TextBox ID="TxtNombreCargo" runat="server" class="form-control" placeholder="Nuevo Cargo"></asp:TextBox>     
+                                 </div>
                             <div class="col-md-12 m-b-20">
                                 <!--AQUI EDITAS EL CUADRO DE CARGO NUEVO CARGO-->
-                                <input type="text" class="form-control" placeholder="Nuevo Cargo">
+                              <asp:TextBox ID="TxtEstadoCargo" runat="server" class="form-control" placeholder="Nuevo Estado"></asp:TextBox>     
                             </div>
                         </div>
                     </div>
 
                 </div>
                 <div class="modal-footer">
-                    <asp:Button ID="Button1" runat="server" Text="Guardar" OnClick="Button1_Click" CssClass="btn btn-info" />
+                    <asp:Button ID="Btn_RegistarCargo" runat="server" Text="Guardar" OnClick="Btn_RegistarCargo_Click" CssClass="btn btn-info" />
+
                     <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cancel</button>
                 </div>
             </div>

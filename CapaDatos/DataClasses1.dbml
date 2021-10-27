@@ -266,15 +266,15 @@
       <Association Name="Tbl_TelefonoIntitucional_Tbl_Personas" Member="Tbl_Personas" ThisKey="TelfInts_id" OtherKey="TelfInts_id" Type="Tbl_Personas" />
     </Type>
   </Table>
-  <Function Name="dbo.Registro_CargoInstitucional" Method="Registro_CargoInstitucional">
-    <Parameter Name="CargoInsti_nom" Parameter="cargoInsti_nom" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="CargoInsti_estado" Parameter="cargoInsti_estado" Type="System.String" DbType="VarChar(1)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.Actualizar_CargoInstitucional" Method="Actualizar_CargoInstitucional">
     <Parameter Name="CargoInsti_id" Parameter="cargoInsti_id" Type="System.Int32" DbType="Int" />
     <Parameter Name="CargoInsti_nom" Parameter="cargoInsti_nom" Type="System.String" DbType="VarChar(100)" />
     <Parameter Name="CargoInsti_estado" Parameter="cargoInsti_estado" Type="System.String" DbType="VarChar(1)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Registro_CorreoIntitucional" Method="Registro_CorreoIntitucional">
+    <Parameter Name="CorreoIn_nom" Parameter="correoIn_nom" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CorreoIn_estado" Parameter="correoIn_estado" Type="System.String" DbType="VarChar(1)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.Buscar_CargoInstitucional" Method="Buscar_CargoInstitucional">
@@ -295,5 +295,10 @@
       <Column Name="CargoInsti_nom" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="CargoInsti_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.Registro_CargoInstitucional" Method="Registro_CargoInstitucional">
+    <Parameter Name="CargoInsti_nom" Parameter="cargoInsti_nom" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CargoInsti_estado" Parameter="cargoInsti_estado" Type="System.String" DbType="VarChar(1)" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>
