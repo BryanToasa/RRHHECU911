@@ -14,17 +14,32 @@ namespace RRHHECU911.vistas.data
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados')", true);
+           
+        }
+        protected void Btn_RegistarCargo_Click(object sender, EventArgs e)
+        {
+            Registar_Cargo_Institucional();
+        }
+        
+        private void Registar_Cargo_Institucional() 
+        {
+            if (string.IsNullOrEmpty(TxtNombreCargo.Text) || string.IsNullOrEmpty(TxtEstadoCargo.Text))
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Asegurese que los campos esten llenos!!')", true);
+            }
+            else
+            {
+                dc.Registro_CargoInstitucional(TxtNombreCargo.Text, TxtEstadoCargo.Text);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados ^-^')", true);
+                LimpiarPantalla();
+            }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            //Message.Text = "Hello World!!";
-        }
+        
 
-        protected void Button1_Click(object sender, EventArgs e)
+        private void LimpiarPantalla()
         {
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados')", true);
+            TxtNombreCargo.Text = TxtEstadoCargo.Text = "";
         }
     }
 }
