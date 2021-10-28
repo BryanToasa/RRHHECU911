@@ -15,6 +15,15 @@ namespace RRHHECU911.vistas.data
     {
 
         /// <summary>
+        /// Control grvCargo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grvCargo;
+
+        /// <summary>
         /// Control TxtNombreCargo.
         /// </summary>
         /// <remarks>

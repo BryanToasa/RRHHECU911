@@ -14,7 +14,10 @@ namespace RRHHECU911.vistas.data
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            if (!IsPostBack)
+            {
+                CargarCargo();
+            }
         }
         protected void Btn_RegistarCargo_Click(object sender, EventArgs e)
         {
@@ -35,11 +38,29 @@ namespace RRHHECU911.vistas.data
             }
         }
 
-        
+        private void CargarCargo()
+        {
+            var Cargo = dc.Listar_CargoInstitucional();
+
+            grvCargo.DataSource = Cargo.ToList();
+
+            grvCargo.DataBind();
+        }
+
 
         private void LimpiarPantalla()
         {
             TxtNombreCargo.Text = TxtEstadoCargo.Text = "";
+        }
+
+        protected void grvCargo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void grvCargo_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+
         }
     }
 }

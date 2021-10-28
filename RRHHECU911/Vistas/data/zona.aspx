@@ -109,18 +109,19 @@
                         <div class="form-group">
                             <div class="col-md-12 m-b-20">
                                 <!--AQUI EDITAS EL CUADRO DE ID NUEVO ZONA-->
-                                <input type="text" class="form-control" placeholder="Nuevo Id">
+
+                                <input type="Text" class="form-control" placeholder="Nueva Zona ">
                             </div>
                             <div class="col-md-12 m-b-20">
                                 <!--AQUI EDITAS EL CUADRO DE CARGO NUEVO ZONA-->
-                                <input type="text" class="form-control" placeholder="Nuevo Zona">
+                                <input type="text" class="form-control" placeholder="A">
                             </div>
                         </div>
                     </div>
 
                 </div>
                 <div class="modal-footer">                
-                    <asp:Button ID="Button1" runat="server" Text="Guardar" OnClick="Button1_Click" CssClass="btn btn-info" />
+                    <asp:Button ID="Btn_GuardarZona" runat="server" Text="Guardar" OnClick="Btn_GuardarZona_Click" CssClass="btn btn-info" />
                     <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cancelar</button>
                 </div>
             </div>

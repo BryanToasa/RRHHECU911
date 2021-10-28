@@ -27,7 +27,7 @@
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="chp_contenido" runat="server">
-    <div class="row">
+    <%-- <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
@@ -78,21 +78,7 @@
                                 </tr>
 
                             </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td colspan="2">
-                                        <button type="button" class="btn btn-info btn-rounded" data-toggle="modal" data-target="#add-contact">Agregar nuevo contacto</button>
-                                    </td>
-
-                                    <td colspan="7">
-                                        <div class="text-right">
-                                            <ul class="pagination"></ul>
-                                        </div>
-                                        
-                                    </td>
-                                   
-                                </tr>
-                            </tfoot>
+                            
 
                         </table>
 
@@ -100,7 +86,62 @@
                 </div>
             </div>
         </div>
+    </div>--%>
+    <%-- Tabla de Cargos--%>
+    <div>
+        <asp:GridView ID="grvCargo" runat="server" OnRowCommand="grvCargo_RowCommand" AutoGenerateColumns="false" GridLines="None" CssClass="table table-hover text-center table-responsive">
+            <Columns>
+                <asp:TemplateField HeaderText="Codigo">
+                    <ItemTemplate>
+                        <asp:Label ID="id_cargo" runat="server" Text='<%#Eval("CargoIntsi_id")%>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Nombres">
+                    <ItemTemplate>
+                        <asp:Label ID="Nombre_cargo" runat="server" Text='<%#Eval("CargoInsti_nom")%>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="estado">
+                    <ItemTemplate>
+                        <asp:Label ID="estado" runat="server" Text='<%#Eval("CargoInsti_estado")%>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField ItemStyle-Width="17" HeaderStyle-Width="17">
+                    <ItemTemplate>
+                        <asp:LinkButton ID="lnbEliminar" Width="16" Height="16" CommandArgument='<%#Eval("CargoIntsi_id")%>' CommandName="Eliminar" OnClientClick="return confirm('Esta seguro que desea eliminar este registro..')" runat="server"><i class="fas fa-trash"></i></asp:LinkButton>
+                    </ItemTemplate>
+                    <HeaderStyle Width="17px" />
+                    <ItemStyle Width="17px" />
+                </asp:TemplateField>
+                <asp:TemplateField ItemStyle-Width="17" HeaderStyle-Width="17">
+                    <ItemTemplate>
+                        <asp:LinkButton ID="lnbActualizar" Width="16" Height="16" CommandArgument='<%#Eval("CargoIntsi_id")%>' CommandName="Actualizar" OnClientClick="return confirm('Esta seguro que desea Actualizar este registro..')" runat="server"><i class="fas fa-check"></i></asp:LinkButton>
+                    </ItemTemplate>
+                    <HeaderStyle Width="17px" />
+                    <ItemStyle Width="17px" />
+                </asp:TemplateField>
+            </Columns>
+
+        </asp:GridView>
+
     </div>
+    <%-- Boton de Agregar Cargo--%>
+    <tfoot>
+        <tr>
+            <td colspan="2">
+                <button type="button" class="btn btn-info btn-rounded" data-toggle="modal" data-target="#add-contact">Agregar nuevo contacto</button>
+            </td>
+
+            <td colspan="7">
+                <div class="text-right">
+                    <ul class="pagination"></ul>
+                </div>
+
+            </td>
+
+        </tr>
+    </tfoot>
+    <%--Formulario de nuevos Cargos--%>
     <div id="add-contact" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -114,11 +155,11 @@
                         <div class="form-group">
                             <div class="col-md-12 m-b-20">
                                 <!--AQUI EDITAS EL CUADRO DE ID NUEVO CARGO-->
-                               <asp:TextBox ID="TxtNombreCargo" runat="server" class="form-control" placeholder="Nuevo Cargo"></asp:TextBox>     
-                                 </div>
+                                <asp:TextBox ID="TxtNombreCargo" runat="server" class="form-control" placeholder="Nuevo Cargo"></asp:TextBox>
+                            </div>
                             <div class="col-md-12 m-b-20">
                                 <!--AQUI EDITAS EL CUADRO DE CARGO NUEVO CARGO-->
-                              <asp:TextBox ID="TxtEstadoCargo" runat="server" class="form-control" placeholder="Nuevo Estado"></asp:TextBox>     
+                                <asp:TextBox ID="TxtEstadoCargo" runat="server" class="form-control" placeholder="Nuevo Estado"></asp:TextBox>
                             </div>
                         </div>
                     </div>
@@ -166,5 +207,5 @@
             radioswitch.init()
         });
     </script>
-    
+
 </asp:Content>
