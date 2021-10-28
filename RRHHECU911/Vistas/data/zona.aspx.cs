@@ -12,11 +12,18 @@ namespace RRHHECU911.vistas.data
         protected void Page_Load(object sender, EventArgs e)
         {
 
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados')", true);
+           
+           
+        }
+
+        protected void Btn_GuardarZona_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
