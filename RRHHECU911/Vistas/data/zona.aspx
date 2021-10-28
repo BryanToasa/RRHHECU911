@@ -109,12 +109,13 @@
                         <div class="form-group">
                             <div class="col-md-12 m-b-20">
                                 <!--AQUI EDITAS EL CUADRO DE ID NUEVO ZONA-->
-
-                                <input type="Text" class="form-control" placeholder="Nueva Zona ">
+                                <asp:TextBox ID="Txt_NombreZona" runat="server" class="form-control" placeholder="Nueva Zona"></asp:TextBox>
+                                
                             </div>
                             <div class="col-md-12 m-b-20">
                                 <!--AQUI EDITAS EL CUADRO DE CARGO NUEVO ZONA-->
-                                <input type="text" class="form-control" placeholder="A">
+                                <asp:TextBox ID="Txt_EstadoZona" runat="server" class="form-control" placeholder="Estado Zona"></asp:TextBox>
+                                
                             </div>
                         </div>
                     </div>

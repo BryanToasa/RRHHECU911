@@ -15,6 +15,24 @@ namespace RRHHECU911.vistas.data
     {
 
         /// <summary>
+        /// Control Txt_NombreZona.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Txt_NombreZona;
+
+        /// <summary>
+        /// Control Txt_EstadoZona.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Txt_EstadoZona;
+
+        /// <summary>
         /// Control Btn_GuardarZona.
         /// </summary>
         /// <remarks>
