@@ -36,7 +36,20 @@
                     <h4 class="card-title">Agregar nueva Zona</h4>
                     <h6 class="card-subtitle"></h6>
                     <div class="table-responsive">
-                        <table id="demo-foo-addrow" class="table m-t-30 table-hover contact-list" data-page-size="10">
+                        <tfoot>
+                                <tr>
+                                    <td colspan="2">
+                                        <button type="button" class="btn btn-info btn-rounded" data-toggle="modal" data-target="#add-contact">Agregar nuevo contacto</button>
+                                    </td>
+
+                                    <td colspan="7">
+                                        <div class="text-right">
+                                            <ul class="pagination"></ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        <%--<table id="demo-foo-addrow" class="table m-t-30 table-hover contact-list" data-page-size="10">
                             <thead>
                                 <tr>
                                     <th>Id</th>
@@ -53,7 +66,7 @@
                                     <td>
                                         <div class="bt-switch">
                                             <div class="m-b-30">
-                                                <input type="checkbox" checked data-on-color="warning" data-off-color="danger" data-on-text="Enabled" data-off-text="Disabled" />
+                                                <asp:CheckBox ID="CheckBox1" OnCheckedChanged="CheckBox1_CheckedChanged" data-on-color="warning" data-off-color="danger" data-on-text="Enabled" data-off-text="Disabled" runat="server" />
                                             </div>
                                         </div>
 
@@ -94,7 +107,42 @@
                                 </tr>
                             </tfoot>
 
-                        </table>
+                        </table>--%>
+                        <asp:GridView ID="grvZona" OnRowCommand="grvZona_RowCommand" AutoGenerateColumns="false" CssClass="table table-hover text-center table-responsive" GridLines="None"  runat="server">
+                            <Columns>   
+                                <asp:TemplateField HeaderText="Codigo">
+                                    <ItemTemplate>
+                                          <asp:Label ID="id_zona" runat="server" Text='<%#Eval("Zona_id")%>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Nombre">
+                                    <ItemTemplate>
+                                        <asp:Label ID="Nombre_zona" runat="server" Text='<%#Eval("Zona_nom")%>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField>
+                                   <ItemTemplate>
+                                       <asp:Label ID="Estado_zona" runat="server" Text='<%#Eval("Zona_estado")%>'></asp:Label>
+                                   </ItemTemplate>
+                                </asp:TemplateField>
+                               <%-- BOTONES ELIMINAR Y ACTUALIZAR--%>
+                               <asp:TemplateField ItemStyle-Width="17" HeaderStyle-Width="17">
+                                <ItemTemplate>
+                                    <asp:LinkButton ID="lnbEliminar" Width="16" Height="16" CommandArgument='<%#Eval("Zona_id")%>' CommandName="Eliminar" OnClientClick="return confirm('Esta seguro que desea eliminar este registro..')" runat="server"><i class="fas fa-trash"></i></asp:LinkButton>
+                                </ItemTemplate>
+                                <HeaderStyle Width="17px" />
+                                <ItemStyle Width="17px" />
+                            </asp:TemplateField>
+                            <asp:TemplateField ItemStyle-Width="17" HeaderStyle-Width="17">
+                                <ItemTemplate>
+                                    <asp:LinkButton ID="lnbActualizar" Width="16" Height="16" CommandArgument='<%#Eval("Zona_id")%>' CommandName="Actualizar" OnClientClick="return confirm('Esta seguro que desea Actualizar este registro..')" runat="server"><i class="fas fa-check"></i></asp:LinkButton>
+                                </ItemTemplate>
+                                <HeaderStyle Width="17px" />
+                                <ItemStyle Width="17px" />
+                            </asp:TemplateField>
+                            </Columns>
+
+                        </asp:GridView>
                     </div>
                 </div>
             </div>
@@ -126,8 +174,8 @@
 
                 </div>
                 <div class="modal-footer">                
-                    <asp:Button ID="Button1" runat="server" Text="Guardar" OnClick="Button1_Click" CssClass="btn btn-info" />
-                    <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cancelar</button>
+                    <asp:Button ID="Btn_RegistrarZona" runat="server" Text="Guardar" OnClick="Btn_RegistrarZona_Click" CssClass="btn btn-info" />
+
                 </div>
             </div>
             <!-- /.modal-content -->

@@ -15,6 +15,15 @@ namespace RRHHECU911.vistas.data
     {
 
         /// <summary>
+        /// Control grvZona.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grvZona;
+
+        /// <summary>
         /// Control Txt_NombreZona.
         /// </summary>
         /// <remarks>
@@ -33,12 +42,12 @@ namespace RRHHECU911.vistas.data
         protected global::System.Web.UI.WebControls.TextBox Txt_EstadoZona;
 
         /// <summary>
-        /// Control Btn_GuardarZona.
+        /// Control Btn_RegistrarZona.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn_GuardarZona;
+        protected global::System.Web.UI.WebControls.Button Btn_RegistrarZona;
     }
 }

@@ -1,5 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="RRHHECU911" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-GH8860H\SQLEXPRESS;Initial Catalog=RRHHECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="RRHHECU911ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Tbl_Discapacidad" Member="Tbl_Discapacidad">
+    <Type Name="Tbl_Discapacidad">
+      <Column Name="Dis_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Dis_nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Dis_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="Tbl_Discapacidad_Tbl_Inicial" Member="Tbl_Inicial" ThisKey="Dis_id" OtherKey="Dis_id" Type="Tbl_Inicial" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_Identidad_de_Genero" Member="Tbl_Identidad_de_Genero">
+    <Type Name="Tbl_Identidad_de_Genero">
+      <Column Name="IdtGen_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdtGen_nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IdtGen_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="Tbl_Identidad_de_Genero_Tbl_Inicial" Member="Tbl_Inicial" ThisKey="IdtGen_id" OtherKey="IdtGen_id" Type="Tbl_Inicial" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_OrientacionSexual" Member="Tbl_OrientacionSexual">
+    <Type Name="Tbl_OrientacionSexual">
+      <Column Name="OrSex_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OrSex_nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="OrSex_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="Tbl_OrientacionSexual_Tbl_Inicial" Member="Tbl_Inicial" ThisKey="OrSex_id" OtherKey="OrSex_id" Type="Tbl_Inicial" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_Religion" Member="Tbl_Religion">
+    <Type Name="Tbl_Religion">
+      <Column Name="Rel_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Rel_nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Rel_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="Tbl_Religion_Tbl_Inicial" Member="Tbl_Inicial" ThisKey="Rel_id" OtherKey="Rel_id" Type="Tbl_Inicial" />
+    </Type>
+  </Table>
   <Table Name="dbo.Tbl_CargoInstitucional" Member="Tbl_CargoInstitucional">
     <Type Name="Tbl_CargoInstitucional">
       <Column Name="CargoIntsi_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -32,12 +64,12 @@
       <Association Name="Tbl_DireccionInstitucional_Tbl_Personas" Member="Tbl_Personas" ThisKey="DirInsti_Id" OtherKey="DirInsti_Id" Type="Tbl_Personas" />
     </Type>
   </Table>
-  <Table Name="dbo.Tbl_Discapacidad" Member="Tbl_Discapacidad">
-    <Type Name="Tbl_Discapacidad">
+  <Table Name="dbo.Tbl_Discapacidad" Member="Tbl_Discapacidad1">
+    <Type Name="Tbl_Discapacidad1">
       <Column Name="Dis_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Dis_nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="Dis_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
-      <Association Name="Tbl_Discapacidad_Tbl_Inicial" Member="Tbl_Inicial" ThisKey="Dis_id" OtherKey="Dis_id" Type="Tbl_Inicial" />
+      <Association Name="Tbl_Discapacidad1_Tbl_Inicial" Member="Tbl_Inicial" ThisKey="Dis_id" OtherKey="Dis_id" Type="Tbl_Inicial" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_Emp_Per" Member="Tbl_Emp_Per">
@@ -106,12 +138,12 @@
       <Association Name="Tbl_GrupoOcupacional_Tbl_Personas" Member="Tbl_Personas" ThisKey="GrpOcupacional_id" OtherKey="GrpOcupacional_id" Type="Tbl_Personas" />
     </Type>
   </Table>
-  <Table Name="dbo.Tbl_Identidad_de_Genero" Member="Tbl_Identidad_de_Genero">
-    <Type Name="Tbl_Identidad_de_Genero">
+  <Table Name="dbo.Tbl_Identidad_de_Genero" Member="Tbl_Identidad_de_Genero1">
+    <Type Name="Tbl_Identidad_de_Genero1">
       <Column Name="IdtGen_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="IdtGen_nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="IdtGen_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
-      <Association Name="Tbl_Identidad_de_Genero_Tbl_Inicial" Member="Tbl_Inicial" ThisKey="IdtGen_id" OtherKey="IdtGen_id" Type="Tbl_Inicial" />
+      <Association Name="Tbl_Identidad_de_Genero1_Tbl_Inicial" Member="Tbl_Inicial" ThisKey="IdtGen_id" OtherKey="IdtGen_id" Type="Tbl_Inicial" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_Inicial" Member="Tbl_Inicial">
@@ -139,9 +171,13 @@
       <Association Name="Tbl_Inicial_Tbl_Emp_Per" Member="Tbl_Emp_Per" ThisKey="inicial_id" OtherKey="Per_id" Type="Tbl_Emp_Per" />
       <Association Name="Tbl_Inicial_Tbl_Personas" Member="Tbl_Personas" ThisKey="inicial_id" OtherKey="inicial_id" Type="Tbl_Personas" />
       <Association Name="Tbl_Discapacidad_Tbl_Inicial" Member="Tbl_Discapacidad" ThisKey="Dis_id" OtherKey="Dis_id" Type="Tbl_Discapacidad" IsForeignKey="true" />
+      <Association Name="Tbl_Discapacidad1_Tbl_Inicial" Member="Tbl_Discapacidad1" ThisKey="Dis_id" OtherKey="Dis_id" Type="Tbl_Discapacidad1" IsForeignKey="true" />
       <Association Name="Tbl_Identidad_de_Genero_Tbl_Inicial" Member="Tbl_Identidad_de_Genero" ThisKey="IdtGen_id" OtherKey="IdtGen_id" Type="Tbl_Identidad_de_Genero" IsForeignKey="true" />
+      <Association Name="Tbl_Identidad_de_Genero1_Tbl_Inicial" Member="Tbl_Identidad_de_Genero1" ThisKey="IdtGen_id" OtherKey="IdtGen_id" Type="Tbl_Identidad_de_Genero1" IsForeignKey="true" />
       <Association Name="Tbl_OrientacionSexual_Tbl_Inicial" Member="Tbl_OrientacionSexual" ThisKey="OrSex_id" OtherKey="OrSex_id" Type="Tbl_OrientacionSexual" IsForeignKey="true" />
       <Association Name="Tbl_Religion_Tbl_Inicial" Member="Tbl_Religion" ThisKey="Rel_id" OtherKey="Rel_id" Type="Tbl_Religion" IsForeignKey="true" />
+      <Association Name="Tbl_OrientacionSexual1_Tbl_Inicial" Member="Tbl_OrientacionSexual1" ThisKey="OrSex_id" OtherKey="OrSex_id" Type="Tbl_OrientacionSexual1" IsForeignKey="true" />
+      <Association Name="Tbl_Religion1_Tbl_Inicial" Member="Tbl_Religion1" ThisKey="Rel_id" OtherKey="Rel_id" Type="Tbl_Religion1" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_ModalidadLaboral" Member="Tbl_ModalidadLaboral">
@@ -152,12 +188,12 @@
       <Association Name="Tbl_ModalidadLaboral_Tbl_Personas" Member="Tbl_Personas" ThisKey="Per_modLaboral_id" OtherKey="Per_modLaboral_id" Type="Tbl_Personas" />
     </Type>
   </Table>
-  <Table Name="dbo.Tbl_OrientacionSexual" Member="Tbl_OrientacionSexual">
-    <Type Name="Tbl_OrientacionSexual">
+  <Table Name="dbo.Tbl_OrientacionSexual" Member="Tbl_OrientacionSexual1">
+    <Type Name="Tbl_OrientacionSexual1">
       <Column Name="OrSex_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="OrSex_nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="OrSex_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
-      <Association Name="Tbl_OrientacionSexual_Tbl_Inicial" Member="Tbl_Inicial" ThisKey="OrSex_id" OtherKey="OrSex_id" Type="Tbl_Inicial" />
+      <Association Name="Tbl_OrientacionSexual1_Tbl_Inicial" Member="Tbl_Inicial" ThisKey="OrSex_id" OtherKey="OrSex_id" Type="Tbl_Inicial" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_Personas" Member="Tbl_Personas">
@@ -233,12 +269,12 @@
       <Association Name="Tbl_ProcesoInterno_Tbl_Personas" Member="Tbl_Personas" ThisKey="ProcesoInt_id" OtherKey="ProcesoInt_id" Type="Tbl_Personas" />
     </Type>
   </Table>
-  <Table Name="dbo.Tbl_Religion" Member="Tbl_Religion">
-    <Type Name="Tbl_Religion">
+  <Table Name="dbo.Tbl_Religion" Member="Tbl_Religion1">
+    <Type Name="Tbl_Religion1">
       <Column Name="Rel_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Rel_nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="Rel_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
-      <Association Name="Tbl_Religion_Tbl_Inicial" Member="Tbl_Inicial" ThisKey="Rel_id" OtherKey="Rel_id" Type="Tbl_Inicial" />
+      <Association Name="Tbl_Religion1_Tbl_Inicial" Member="Tbl_Inicial" ThisKey="Rel_id" OtherKey="Rel_id" Type="Tbl_Inicial" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_Rmu" Member="Tbl_Rmu">
@@ -272,33 +308,64 @@
     <Parameter Name="CargoInsti_estado" Parameter="cargoInsti_estado" Type="System.String" DbType="VarChar(1)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.Registro_CorreoIntitucional" Method="Registro_CorreoIntitucional">
-    <Parameter Name="CorreoIn_nom" Parameter="correoIn_nom" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="CorreoIn_estado" Parameter="correoIn_estado" Type="System.String" DbType="VarChar(1)" />
+  <Function Name="dbo.Registro_Zona" Method="Registro_Zona">
+    <Parameter Name="Zona_Nombre" Parameter="zona_Nombre" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Zon_estado" Parameter="zon_estado" Type="System.String" DbType="VarChar(1)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.Buscar_CargoInstitucional" Method="Buscar_CargoInstitucional">
-    <Parameter Name="CargoInsti_id" Parameter="cargoInsti_id" Type="System.Int32" DbType="Int" />
-    <ElementType Name="Buscar_CargoInstitucionalResult">
-      <Column Name="CargoIntsi_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="CargoInsti_nom" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="CargoInsti_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-    </ElementType>
+  <Function Name="dbo.Actualizar_EstructuraDos" Method="Actualizar_EstructuraDos">
+    <Parameter Name="EstructuraDos_id" Parameter="estructuraDos_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EstructuraDos_nom" Parameter="estructuraDos_nom" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="EstructuraDos_Estado" Parameter="estructuraDos_Estado" Type="System.String" DbType="VarChar(1)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Actualizar_Zona" Method="Actualizar_Zona">
+    <Parameter Name="Zona_id" Parameter="zona_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Zona_Nombre" Parameter="zona_Nombre" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Zona_estado" Parameter="zona_estado" Type="System.String" DbType="VarChar(1)" />
+    <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.Eliminar_CargoInstitucional" Method="Eliminar_CargoInstitucional">
     <Parameter Name="CargoInsti_id" Parameter="cargoInsti_id" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.Listar_CargoInstitucional" Method="Listar_CargoInstitucional">
-    <ElementType Name="Listar_CargoInstitucionalResult">
+  <Function Name="dbo.Eliminar_EstructuraDos" Method="Eliminar_EstructuraDos">
+    <Parameter Name="EstructuraDos_id" Parameter="estructuraDos_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Eliminar_Zona" Method="Eliminar_Zona">
+    <Parameter Name="Zona_id" Parameter="zona_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ListarXEstadoActivo_CargoInstitucional" Method="ListarXEstadoActivo_CargoInstitucional">
+    <ElementType Name="ListarXEstadoActivo_CargoInstitucionalResult">
       <Column Name="CargoIntsi_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="CargoInsti_nom" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="CargoInsti_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.ListarXEstadoActivo_EstructuraDos" Method="ListarXEstadoActivo_EstructuraDos">
+    <ElementType Name="ListarXEstadoActivo_EstructuraDosResult">
+      <Column Name="EstructuraDos_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EstructuraDos_nom" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EstructuraDos_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ListarXEstadoActivo_Zona" Method="ListarXEstadoActivo_Zona">
+    <ElementType Name="ListarXEstadoActivo_ZonaResult">
+      <Column Name="Zona_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Zona_nom" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Zona_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.Registro_CargoInstitucional" Method="Registro_CargoInstitucional">
     <Parameter Name="CargoInsti_nom" Parameter="cargoInsti_nom" Type="System.String" DbType="VarChar(100)" />
     <Parameter Name="CargoInsti_estado" Parameter="cargoInsti_estado" Type="System.String" DbType="VarChar(1)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Registro_EstructuraDos" Method="Registro_EstructuraDos">
+    <Parameter Name="EstructuraDos_nom" Parameter="estructuraDos_nom" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="EstructuraDos_Estado" Parameter="estructuraDos_Estado" Type="System.String" DbType="VarChar(1)" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

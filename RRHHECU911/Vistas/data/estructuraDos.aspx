@@ -86,18 +86,21 @@
                                                         <div class="form-group">
                                                             <div class="col-md-12 m-b-20">
                                                                 <!--AQUI EDITAS EL CUADRO DE Nombre NUEVO Estructura Dos-->
-                                                                <input type="text" class="form-control" placeholder="Type name">
+                                                                <asp:TextBox ID="Txt_NombreEstruDos" runat="server" class="form-control" placeholder="Nueva Estructura" ></asp:TextBox>
+
+                                                              
                                                             </div>
                                                             <div class="col-md-12 m-b-20">
                                                                 <!--AQUI EDITAS EL CUADRO DE Nombre NUEVO Estructura Dos-->
-                                                                <input type="text" class="form-control" placeholder="Type name">
+                                                                <asp:TextBox ID="txt_EstadoEstuDos" runat="server" class="form-control" placeholder="Estado Estructura" ></asp:TextBox>
+                                                             
                                                             </div>
                                                         </div>
                                                     </div>
 
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-info waves-effect" data-dismiss="modal">Guardar</button>
+                                                    <asp:Button ID="Btn_RegistarEstructuraDos" Text="Guardar" OnClick="Btn_RegistarEstructuraDos_Click" CssClass="btn btn-info" runat="server" />
                                                     <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cancelar</button>
                                                 </div>
                                             </div>

@@ -30,6 +30,18 @@ namespace CapaDatos
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnCreated();
+    partial void InsertTbl_Discapacidad(Tbl_Discapacidad instance);
+    partial void UpdateTbl_Discapacidad(Tbl_Discapacidad instance);
+    partial void DeleteTbl_Discapacidad(Tbl_Discapacidad instance);
+    partial void InsertTbl_Identidad_de_Genero(Tbl_Identidad_de_Genero instance);
+    partial void UpdateTbl_Identidad_de_Genero(Tbl_Identidad_de_Genero instance);
+    partial void DeleteTbl_Identidad_de_Genero(Tbl_Identidad_de_Genero instance);
+    partial void InsertTbl_OrientacionSexual(Tbl_OrientacionSexual instance);
+    partial void UpdateTbl_OrientacionSexual(Tbl_OrientacionSexual instance);
+    partial void DeleteTbl_OrientacionSexual(Tbl_OrientacionSexual instance);
+    partial void InsertTbl_Religion(Tbl_Religion instance);
+    partial void UpdateTbl_Religion(Tbl_Religion instance);
+    partial void DeleteTbl_Religion(Tbl_Religion instance);
     partial void InsertTbl_CargoInstitucional(Tbl_CargoInstitucional instance);
     partial void UpdateTbl_CargoInstitucional(Tbl_CargoInstitucional instance);
     partial void DeleteTbl_CargoInstitucional(Tbl_CargoInstitucional instance);
@@ -42,9 +54,9 @@ namespace CapaDatos
     partial void InsertTbl_DireccionInstitucional(Tbl_DireccionInstitucional instance);
     partial void UpdateTbl_DireccionInstitucional(Tbl_DireccionInstitucional instance);
     partial void DeleteTbl_DireccionInstitucional(Tbl_DireccionInstitucional instance);
-    partial void InsertTbl_Discapacidad(Tbl_Discapacidad instance);
-    partial void UpdateTbl_Discapacidad(Tbl_Discapacidad instance);
-    partial void DeleteTbl_Discapacidad(Tbl_Discapacidad instance);
+    partial void InsertTbl_Discapacidad1(Tbl_Discapacidad1 instance);
+    partial void UpdateTbl_Discapacidad1(Tbl_Discapacidad1 instance);
+    partial void DeleteTbl_Discapacidad1(Tbl_Discapacidad1 instance);
     partial void InsertTbl_Emp_Per(Tbl_Emp_Per instance);
     partial void UpdateTbl_Emp_Per(Tbl_Emp_Per instance);
     partial void DeleteTbl_Emp_Per(Tbl_Emp_Per instance);
@@ -69,27 +81,27 @@ namespace CapaDatos
     partial void InsertTbl_GrupoOcupacional(Tbl_GrupoOcupacional instance);
     partial void UpdateTbl_GrupoOcupacional(Tbl_GrupoOcupacional instance);
     partial void DeleteTbl_GrupoOcupacional(Tbl_GrupoOcupacional instance);
-    partial void InsertTbl_Identidad_de_Genero(Tbl_Identidad_de_Genero instance);
-    partial void UpdateTbl_Identidad_de_Genero(Tbl_Identidad_de_Genero instance);
-    partial void DeleteTbl_Identidad_de_Genero(Tbl_Identidad_de_Genero instance);
+    partial void InsertTbl_Identidad_de_Genero1(Tbl_Identidad_de_Genero1 instance);
+    partial void UpdateTbl_Identidad_de_Genero1(Tbl_Identidad_de_Genero1 instance);
+    partial void DeleteTbl_Identidad_de_Genero1(Tbl_Identidad_de_Genero1 instance);
     partial void InsertTbl_Inicial(Tbl_Inicial instance);
     partial void UpdateTbl_Inicial(Tbl_Inicial instance);
     partial void DeleteTbl_Inicial(Tbl_Inicial instance);
     partial void InsertTbl_ModalidadLaboral(Tbl_ModalidadLaboral instance);
     partial void UpdateTbl_ModalidadLaboral(Tbl_ModalidadLaboral instance);
     partial void DeleteTbl_ModalidadLaboral(Tbl_ModalidadLaboral instance);
-    partial void InsertTbl_OrientacionSexual(Tbl_OrientacionSexual instance);
-    partial void UpdateTbl_OrientacionSexual(Tbl_OrientacionSexual instance);
-    partial void DeleteTbl_OrientacionSexual(Tbl_OrientacionSexual instance);
+    partial void InsertTbl_OrientacionSexual1(Tbl_OrientacionSexual1 instance);
+    partial void UpdateTbl_OrientacionSexual1(Tbl_OrientacionSexual1 instance);
+    partial void DeleteTbl_OrientacionSexual1(Tbl_OrientacionSexual1 instance);
     partial void InsertTbl_Personas(Tbl_Personas instance);
     partial void UpdateTbl_Personas(Tbl_Personas instance);
     partial void DeleteTbl_Personas(Tbl_Personas instance);
     partial void InsertTbl_ProcesoInterno(Tbl_ProcesoInterno instance);
     partial void UpdateTbl_ProcesoInterno(Tbl_ProcesoInterno instance);
     partial void DeleteTbl_ProcesoInterno(Tbl_ProcesoInterno instance);
-    partial void InsertTbl_Religion(Tbl_Religion instance);
-    partial void UpdateTbl_Religion(Tbl_Religion instance);
-    partial void DeleteTbl_Religion(Tbl_Religion instance);
+    partial void InsertTbl_Religion1(Tbl_Religion1 instance);
+    partial void UpdateTbl_Religion1(Tbl_Religion1 instance);
+    partial void DeleteTbl_Religion1(Tbl_Religion1 instance);
     partial void InsertTbl_Rmu(Tbl_Rmu instance);
     partial void UpdateTbl_Rmu(Tbl_Rmu instance);
     partial void DeleteTbl_Rmu(Tbl_Rmu instance);
@@ -131,6 +143,38 @@ namespace CapaDatos
 			OnCreated();
 		}
 		
+		public System.Data.Linq.Table<Tbl_Discapacidad> Tbl_Discapacidad
+		{
+			get
+			{
+				return this.GetTable<Tbl_Discapacidad>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Tbl_Identidad_de_Genero> Tbl_Identidad_de_Genero
+		{
+			get
+			{
+				return this.GetTable<Tbl_Identidad_de_Genero>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Tbl_OrientacionSexual> Tbl_OrientacionSexual
+		{
+			get
+			{
+				return this.GetTable<Tbl_OrientacionSexual>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Tbl_Religion> Tbl_Religion
+		{
+			get
+			{
+				return this.GetTable<Tbl_Religion>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Tbl_CargoInstitucional> Tbl_CargoInstitucional
 		{
 			get
@@ -163,11 +207,11 @@ namespace CapaDatos
 			}
 		}
 		
-		public System.Data.Linq.Table<Tbl_Discapacidad> Tbl_Discapacidad
+		public System.Data.Linq.Table<Tbl_Discapacidad1> Tbl_Discapacidad1
 		{
 			get
 			{
-				return this.GetTable<Tbl_Discapacidad>();
+				return this.GetTable<Tbl_Discapacidad1>();
 			}
 		}
 		
@@ -235,11 +279,11 @@ namespace CapaDatos
 			}
 		}
 		
-		public System.Data.Linq.Table<Tbl_Identidad_de_Genero> Tbl_Identidad_de_Genero
+		public System.Data.Linq.Table<Tbl_Identidad_de_Genero1> Tbl_Identidad_de_Genero1
 		{
 			get
 			{
-				return this.GetTable<Tbl_Identidad_de_Genero>();
+				return this.GetTable<Tbl_Identidad_de_Genero1>();
 			}
 		}
 		
@@ -259,11 +303,11 @@ namespace CapaDatos
 			}
 		}
 		
-		public System.Data.Linq.Table<Tbl_OrientacionSexual> Tbl_OrientacionSexual
+		public System.Data.Linq.Table<Tbl_OrientacionSexual1> Tbl_OrientacionSexual1
 		{
 			get
 			{
-				return this.GetTable<Tbl_OrientacionSexual>();
+				return this.GetTable<Tbl_OrientacionSexual1>();
 			}
 		}
 		
@@ -283,11 +327,11 @@ namespace CapaDatos
 			}
 		}
 		
-		public System.Data.Linq.Table<Tbl_Religion> Tbl_Religion
+		public System.Data.Linq.Table<Tbl_Religion1> Tbl_Religion1
 		{
 			get
 			{
-				return this.GetTable<Tbl_Religion>();
+				return this.GetTable<Tbl_Religion1>();
 			}
 		}
 		
@@ -322,18 +366,25 @@ namespace CapaDatos
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Registro_CorreoIntitucional")]
-		public int Registro_CorreoIntitucional([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CorreoIn_nom", DbType="VarChar(100)")] string correoIn_nom, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CorreoIn_estado", DbType="VarChar(1)")] string correoIn_estado)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Registro_Zona")]
+		public int Registro_Zona([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Zona_Nombre", DbType="VarChar(100)")] string zona_Nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Zon_estado", DbType="VarChar(1)")] string zon_estado)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), correoIn_nom, correoIn_estado);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), zona_Nombre, zon_estado);
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Buscar_CargoInstitucional")]
-		public ISingleResult<Buscar_CargoInstitucionalResult> Buscar_CargoInstitucional([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CargoInsti_id", DbType="Int")] System.Nullable<int> cargoInsti_id)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Actualizar_EstructuraDos")]
+		public int Actualizar_EstructuraDos([global::System.Data.Linq.Mapping.ParameterAttribute(Name="EstructuraDos_id", DbType="Int")] System.Nullable<int> estructuraDos_id, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EstructuraDos_nom", DbType="VarChar(100)")] string estructuraDos_nom, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EstructuraDos_Estado", DbType="VarChar(1)")] string estructuraDos_Estado)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cargoInsti_id);
-			return ((ISingleResult<Buscar_CargoInstitucionalResult>)(result.ReturnValue));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), estructuraDos_id, estructuraDos_nom, estructuraDos_Estado);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Actualizar_Zona")]
+		public int Actualizar_Zona([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Zona_id", DbType="Int")] System.Nullable<int> zona_id, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Zona_Nombre", DbType="VarChar(100)")] string zona_Nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Zona_estado", DbType="VarChar(1)")] string zona_estado)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), zona_id, zona_Nombre, zona_estado);
+			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Eliminar_CargoInstitucional")]
@@ -343,11 +394,39 @@ namespace CapaDatos
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Listar_CargoInstitucional")]
-		public ISingleResult<Listar_CargoInstitucionalResult> Listar_CargoInstitucional()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Eliminar_EstructuraDos")]
+		public int Eliminar_EstructuraDos([global::System.Data.Linq.Mapping.ParameterAttribute(Name="EstructuraDos_id", DbType="Int")] System.Nullable<int> estructuraDos_id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), estructuraDos_id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Eliminar_Zona")]
+		public int Eliminar_Zona([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Zona_id", DbType="Int")] System.Nullable<int> zona_id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), zona_id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ListarXEstadoActivo_CargoInstitucional")]
+		public ISingleResult<ListarXEstadoActivo_CargoInstitucionalResult> ListarXEstadoActivo_CargoInstitucional()
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<Listar_CargoInstitucionalResult>)(result.ReturnValue));
+			return ((ISingleResult<ListarXEstadoActivo_CargoInstitucionalResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ListarXEstadoActivo_EstructuraDos")]
+		public ISingleResult<ListarXEstadoActivo_EstructuraDosResult> ListarXEstadoActivo_EstructuraDos()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<ListarXEstadoActivo_EstructuraDosResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ListarXEstadoActivo_Zona")]
+		public ISingleResult<ListarXEstadoActivo_ZonaResult> ListarXEstadoActivo_Zona()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<ListarXEstadoActivo_ZonaResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Registro_CargoInstitucional")]
@@ -355,6 +434,565 @@ namespace CapaDatos
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cargoInsti_nom, cargoInsti_estado);
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Registro_EstructuraDos")]
+		public int Registro_EstructuraDos([global::System.Data.Linq.Mapping.ParameterAttribute(Name="EstructuraDos_nom", DbType="VarChar(100)")] string estructuraDos_nom, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EstructuraDos_Estado", DbType="VarChar(1)")] string estructuraDos_Estado)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), estructuraDos_nom, estructuraDos_Estado);
+			return ((int)(result.ReturnValue));
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Discapacidad")]
+	public partial class Tbl_Discapacidad : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Dis_id;
+		
+		private string _Dis_nombre;
+		
+		private System.Nullable<char> _Dis_estado;
+		
+		private EntitySet<Tbl_Inicial> _Tbl_Inicial;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnDis_idChanging(int value);
+    partial void OnDis_idChanged();
+    partial void OnDis_nombreChanging(string value);
+    partial void OnDis_nombreChanged();
+    partial void OnDis_estadoChanging(System.Nullable<char> value);
+    partial void OnDis_estadoChanged();
+    #endregion
+		
+		public Tbl_Discapacidad()
+		{
+			this._Tbl_Inicial = new EntitySet<Tbl_Inicial>(new Action<Tbl_Inicial>(this.attach_Tbl_Inicial), new Action<Tbl_Inicial>(this.detach_Tbl_Inicial));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dis_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Dis_id
+		{
+			get
+			{
+				return this._Dis_id;
+			}
+			set
+			{
+				if ((this._Dis_id != value))
+				{
+					this.OnDis_idChanging(value);
+					this.SendPropertyChanging();
+					this._Dis_id = value;
+					this.SendPropertyChanged("Dis_id");
+					this.OnDis_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dis_nombre", DbType="VarChar(100)")]
+		public string Dis_nombre
+		{
+			get
+			{
+				return this._Dis_nombre;
+			}
+			set
+			{
+				if ((this._Dis_nombre != value))
+				{
+					this.OnDis_nombreChanging(value);
+					this.SendPropertyChanging();
+					this._Dis_nombre = value;
+					this.SendPropertyChanged("Dis_nombre");
+					this.OnDis_nombreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dis_estado", DbType="Char(1)")]
+		public System.Nullable<char> Dis_estado
+		{
+			get
+			{
+				return this._Dis_estado;
+			}
+			set
+			{
+				if ((this._Dis_estado != value))
+				{
+					this.OnDis_estadoChanging(value);
+					this.SendPropertyChanging();
+					this._Dis_estado = value;
+					this.SendPropertyChanged("Dis_estado");
+					this.OnDis_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Discapacidad_Tbl_Inicial", Storage="_Tbl_Inicial", ThisKey="Dis_id", OtherKey="Dis_id")]
+		public EntitySet<Tbl_Inicial> Tbl_Inicial
+		{
+			get
+			{
+				return this._Tbl_Inicial;
+			}
+			set
+			{
+				this._Tbl_Inicial.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Tbl_Inicial(Tbl_Inicial entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Discapacidad = this;
+		}
+		
+		private void detach_Tbl_Inicial(Tbl_Inicial entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Discapacidad = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Identidad_de_Genero")]
+	public partial class Tbl_Identidad_de_Genero : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _IdtGen_id;
+		
+		private string _IdtGen_nombre;
+		
+		private System.Nullable<char> _IdtGen_estado;
+		
+		private EntitySet<Tbl_Inicial> _Tbl_Inicial;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdtGen_idChanging(int value);
+    partial void OnIdtGen_idChanged();
+    partial void OnIdtGen_nombreChanging(string value);
+    partial void OnIdtGen_nombreChanged();
+    partial void OnIdtGen_estadoChanging(System.Nullable<char> value);
+    partial void OnIdtGen_estadoChanged();
+    #endregion
+		
+		public Tbl_Identidad_de_Genero()
+		{
+			this._Tbl_Inicial = new EntitySet<Tbl_Inicial>(new Action<Tbl_Inicial>(this.attach_Tbl_Inicial), new Action<Tbl_Inicial>(this.detach_Tbl_Inicial));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdtGen_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int IdtGen_id
+		{
+			get
+			{
+				return this._IdtGen_id;
+			}
+			set
+			{
+				if ((this._IdtGen_id != value))
+				{
+					this.OnIdtGen_idChanging(value);
+					this.SendPropertyChanging();
+					this._IdtGen_id = value;
+					this.SendPropertyChanged("IdtGen_id");
+					this.OnIdtGen_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdtGen_nombre", DbType="VarChar(100)")]
+		public string IdtGen_nombre
+		{
+			get
+			{
+				return this._IdtGen_nombre;
+			}
+			set
+			{
+				if ((this._IdtGen_nombre != value))
+				{
+					this.OnIdtGen_nombreChanging(value);
+					this.SendPropertyChanging();
+					this._IdtGen_nombre = value;
+					this.SendPropertyChanged("IdtGen_nombre");
+					this.OnIdtGen_nombreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdtGen_estado", DbType="Char(1)")]
+		public System.Nullable<char> IdtGen_estado
+		{
+			get
+			{
+				return this._IdtGen_estado;
+			}
+			set
+			{
+				if ((this._IdtGen_estado != value))
+				{
+					this.OnIdtGen_estadoChanging(value);
+					this.SendPropertyChanging();
+					this._IdtGen_estado = value;
+					this.SendPropertyChanged("IdtGen_estado");
+					this.OnIdtGen_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Identidad_de_Genero_Tbl_Inicial", Storage="_Tbl_Inicial", ThisKey="IdtGen_id", OtherKey="IdtGen_id")]
+		public EntitySet<Tbl_Inicial> Tbl_Inicial
+		{
+			get
+			{
+				return this._Tbl_Inicial;
+			}
+			set
+			{
+				this._Tbl_Inicial.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Tbl_Inicial(Tbl_Inicial entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Identidad_de_Genero = this;
+		}
+		
+		private void detach_Tbl_Inicial(Tbl_Inicial entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Identidad_de_Genero = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_OrientacionSexual")]
+	public partial class Tbl_OrientacionSexual : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _OrSex_id;
+		
+		private string _OrSex_nombre;
+		
+		private System.Nullable<char> _OrSex_estado;
+		
+		private EntitySet<Tbl_Inicial> _Tbl_Inicial;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnOrSex_idChanging(int value);
+    partial void OnOrSex_idChanged();
+    partial void OnOrSex_nombreChanging(string value);
+    partial void OnOrSex_nombreChanged();
+    partial void OnOrSex_estadoChanging(System.Nullable<char> value);
+    partial void OnOrSex_estadoChanged();
+    #endregion
+		
+		public Tbl_OrientacionSexual()
+		{
+			this._Tbl_Inicial = new EntitySet<Tbl_Inicial>(new Action<Tbl_Inicial>(this.attach_Tbl_Inicial), new Action<Tbl_Inicial>(this.detach_Tbl_Inicial));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrSex_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int OrSex_id
+		{
+			get
+			{
+				return this._OrSex_id;
+			}
+			set
+			{
+				if ((this._OrSex_id != value))
+				{
+					this.OnOrSex_idChanging(value);
+					this.SendPropertyChanging();
+					this._OrSex_id = value;
+					this.SendPropertyChanged("OrSex_id");
+					this.OnOrSex_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrSex_nombre", DbType="VarChar(100)")]
+		public string OrSex_nombre
+		{
+			get
+			{
+				return this._OrSex_nombre;
+			}
+			set
+			{
+				if ((this._OrSex_nombre != value))
+				{
+					this.OnOrSex_nombreChanging(value);
+					this.SendPropertyChanging();
+					this._OrSex_nombre = value;
+					this.SendPropertyChanged("OrSex_nombre");
+					this.OnOrSex_nombreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrSex_estado", DbType="Char(1)")]
+		public System.Nullable<char> OrSex_estado
+		{
+			get
+			{
+				return this._OrSex_estado;
+			}
+			set
+			{
+				if ((this._OrSex_estado != value))
+				{
+					this.OnOrSex_estadoChanging(value);
+					this.SendPropertyChanging();
+					this._OrSex_estado = value;
+					this.SendPropertyChanged("OrSex_estado");
+					this.OnOrSex_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_OrientacionSexual_Tbl_Inicial", Storage="_Tbl_Inicial", ThisKey="OrSex_id", OtherKey="OrSex_id")]
+		public EntitySet<Tbl_Inicial> Tbl_Inicial
+		{
+			get
+			{
+				return this._Tbl_Inicial;
+			}
+			set
+			{
+				this._Tbl_Inicial.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Tbl_Inicial(Tbl_Inicial entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_OrientacionSexual = this;
+		}
+		
+		private void detach_Tbl_Inicial(Tbl_Inicial entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_OrientacionSexual = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Religion")]
+	public partial class Tbl_Religion : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Rel_id;
+		
+		private string _Rel_nombre;
+		
+		private System.Nullable<char> _Rel_estado;
+		
+		private EntitySet<Tbl_Inicial> _Tbl_Inicial;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnRel_idChanging(int value);
+    partial void OnRel_idChanged();
+    partial void OnRel_nombreChanging(string value);
+    partial void OnRel_nombreChanged();
+    partial void OnRel_estadoChanging(System.Nullable<char> value);
+    partial void OnRel_estadoChanged();
+    #endregion
+		
+		public Tbl_Religion()
+		{
+			this._Tbl_Inicial = new EntitySet<Tbl_Inicial>(new Action<Tbl_Inicial>(this.attach_Tbl_Inicial), new Action<Tbl_Inicial>(this.detach_Tbl_Inicial));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rel_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Rel_id
+		{
+			get
+			{
+				return this._Rel_id;
+			}
+			set
+			{
+				if ((this._Rel_id != value))
+				{
+					this.OnRel_idChanging(value);
+					this.SendPropertyChanging();
+					this._Rel_id = value;
+					this.SendPropertyChanged("Rel_id");
+					this.OnRel_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rel_nombre", DbType="VarChar(100)")]
+		public string Rel_nombre
+		{
+			get
+			{
+				return this._Rel_nombre;
+			}
+			set
+			{
+				if ((this._Rel_nombre != value))
+				{
+					this.OnRel_nombreChanging(value);
+					this.SendPropertyChanging();
+					this._Rel_nombre = value;
+					this.SendPropertyChanged("Rel_nombre");
+					this.OnRel_nombreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rel_estado", DbType="Char(1)")]
+		public System.Nullable<char> Rel_estado
+		{
+			get
+			{
+				return this._Rel_estado;
+			}
+			set
+			{
+				if ((this._Rel_estado != value))
+				{
+					this.OnRel_estadoChanging(value);
+					this.SendPropertyChanging();
+					this._Rel_estado = value;
+					this.SendPropertyChanged("Rel_estado");
+					this.OnRel_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Religion_Tbl_Inicial", Storage="_Tbl_Inicial", ThisKey="Rel_id", OtherKey="Rel_id")]
+		public EntitySet<Tbl_Inicial> Tbl_Inicial
+		{
+			get
+			{
+				return this._Tbl_Inicial;
+			}
+			set
+			{
+				this._Tbl_Inicial.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Tbl_Inicial(Tbl_Inicial entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Religion = this;
+		}
+		
+		private void detach_Tbl_Inicial(Tbl_Inicial entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Religion = null;
 		}
 	}
 	
@@ -911,7 +1549,7 @@ namespace CapaDatos
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Discapacidad")]
-	public partial class Tbl_Discapacidad : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class Tbl_Discapacidad1 : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -936,7 +1574,7 @@ namespace CapaDatos
     partial void OnDis_estadoChanged();
     #endregion
 		
-		public Tbl_Discapacidad()
+		public Tbl_Discapacidad1()
 		{
 			this._Tbl_Inicial = new EntitySet<Tbl_Inicial>(new Action<Tbl_Inicial>(this.attach_Tbl_Inicial), new Action<Tbl_Inicial>(this.detach_Tbl_Inicial));
 			OnCreated();
@@ -1002,7 +1640,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Discapacidad_Tbl_Inicial", Storage="_Tbl_Inicial", ThisKey="Dis_id", OtherKey="Dis_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Discapacidad1_Tbl_Inicial", Storage="_Tbl_Inicial", ThisKey="Dis_id", OtherKey="Dis_id")]
 		public EntitySet<Tbl_Inicial> Tbl_Inicial
 		{
 			get
@@ -1038,13 +1676,13 @@ namespace CapaDatos
 		private void attach_Tbl_Inicial(Tbl_Inicial entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_Discapacidad = this;
+			entity.Tbl_Discapacidad1 = this;
 		}
 		
 		private void detach_Tbl_Inicial(Tbl_Inicial entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_Discapacidad = null;
+			entity.Tbl_Discapacidad1 = null;
 		}
 	}
 	
@@ -2231,7 +2869,7 @@ namespace CapaDatos
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Identidad_de_Genero")]
-	public partial class Tbl_Identidad_de_Genero : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class Tbl_Identidad_de_Genero1 : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -2256,7 +2894,7 @@ namespace CapaDatos
     partial void OnIdtGen_estadoChanged();
     #endregion
 		
-		public Tbl_Identidad_de_Genero()
+		public Tbl_Identidad_de_Genero1()
 		{
 			this._Tbl_Inicial = new EntitySet<Tbl_Inicial>(new Action<Tbl_Inicial>(this.attach_Tbl_Inicial), new Action<Tbl_Inicial>(this.detach_Tbl_Inicial));
 			OnCreated();
@@ -2322,7 +2960,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Identidad_de_Genero_Tbl_Inicial", Storage="_Tbl_Inicial", ThisKey="IdtGen_id", OtherKey="IdtGen_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Identidad_de_Genero1_Tbl_Inicial", Storage="_Tbl_Inicial", ThisKey="IdtGen_id", OtherKey="IdtGen_id")]
 		public EntitySet<Tbl_Inicial> Tbl_Inicial
 		{
 			get
@@ -2358,13 +2996,13 @@ namespace CapaDatos
 		private void attach_Tbl_Inicial(Tbl_Inicial entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_Identidad_de_Genero = this;
+			entity.Tbl_Identidad_de_Genero1 = this;
 		}
 		
 		private void detach_Tbl_Inicial(Tbl_Inicial entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_Identidad_de_Genero = null;
+			entity.Tbl_Identidad_de_Genero1 = null;
 		}
 	}
 	
@@ -2420,11 +3058,19 @@ namespace CapaDatos
 		
 		private EntityRef<Tbl_Discapacidad> _Tbl_Discapacidad;
 		
+		private EntityRef<Tbl_Discapacidad1> _Tbl_Discapacidad1;
+		
 		private EntityRef<Tbl_Identidad_de_Genero> _Tbl_Identidad_de_Genero;
+		
+		private EntityRef<Tbl_Identidad_de_Genero1> _Tbl_Identidad_de_Genero1;
 		
 		private EntityRef<Tbl_OrientacionSexual> _Tbl_OrientacionSexual;
 		
 		private EntityRef<Tbl_Religion> _Tbl_Religion;
+		
+		private EntityRef<Tbl_OrientacionSexual1> _Tbl_OrientacionSexual1;
+		
+		private EntityRef<Tbl_Religion1> _Tbl_Religion1;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -2477,9 +3123,13 @@ namespace CapaDatos
 			this._Tbl_Emp_Per = new EntitySet<Tbl_Emp_Per>(new Action<Tbl_Emp_Per>(this.attach_Tbl_Emp_Per), new Action<Tbl_Emp_Per>(this.detach_Tbl_Emp_Per));
 			this._Tbl_Personas = new EntitySet<Tbl_Personas>(new Action<Tbl_Personas>(this.attach_Tbl_Personas), new Action<Tbl_Personas>(this.detach_Tbl_Personas));
 			this._Tbl_Discapacidad = default(EntityRef<Tbl_Discapacidad>);
+			this._Tbl_Discapacidad1 = default(EntityRef<Tbl_Discapacidad1>);
 			this._Tbl_Identidad_de_Genero = default(EntityRef<Tbl_Identidad_de_Genero>);
+			this._Tbl_Identidad_de_Genero1 = default(EntityRef<Tbl_Identidad_de_Genero1>);
 			this._Tbl_OrientacionSexual = default(EntityRef<Tbl_OrientacionSexual>);
 			this._Tbl_Religion = default(EntityRef<Tbl_Religion>);
+			this._Tbl_OrientacionSexual1 = default(EntityRef<Tbl_OrientacionSexual1>);
+			this._Tbl_Religion1 = default(EntityRef<Tbl_Religion1>);
 			OnCreated();
 		}
 		
@@ -2554,7 +3204,7 @@ namespace CapaDatos
 			{
 				if ((this._Rel_id != value))
 				{
-					if (this._Tbl_Religion.HasLoadedOrAssignedValue)
+					if ((this._Tbl_Religion.HasLoadedOrAssignedValue || this._Tbl_Religion1.HasLoadedOrAssignedValue))
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -2618,7 +3268,7 @@ namespace CapaDatos
 			{
 				if ((this._OrSex_id != value))
 				{
-					if (this._Tbl_OrientacionSexual.HasLoadedOrAssignedValue)
+					if ((this._Tbl_OrientacionSexual.HasLoadedOrAssignedValue || this._Tbl_OrientacionSexual1.HasLoadedOrAssignedValue))
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -2642,7 +3292,7 @@ namespace CapaDatos
 			{
 				if ((this._IdtGen_id != value))
 				{
-					if (this._Tbl_Identidad_de_Genero.HasLoadedOrAssignedValue)
+					if ((this._Tbl_Identidad_de_Genero.HasLoadedOrAssignedValue || this._Tbl_Identidad_de_Genero1.HasLoadedOrAssignedValue))
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -2666,7 +3316,7 @@ namespace CapaDatos
 			{
 				if ((this._Dis_id != value))
 				{
-					if (this._Tbl_Discapacidad.HasLoadedOrAssignedValue)
+					if ((this._Tbl_Discapacidad.HasLoadedOrAssignedValue || this._Tbl_Discapacidad1.HasLoadedOrAssignedValue))
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -2959,6 +3609,40 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Discapacidad1_Tbl_Inicial", Storage="_Tbl_Discapacidad1", ThisKey="Dis_id", OtherKey="Dis_id", IsForeignKey=true)]
+		public Tbl_Discapacidad1 Tbl_Discapacidad1
+		{
+			get
+			{
+				return this._Tbl_Discapacidad1.Entity;
+			}
+			set
+			{
+				Tbl_Discapacidad1 previousValue = this._Tbl_Discapacidad1.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Discapacidad1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Discapacidad1.Entity = null;
+						previousValue.Tbl_Inicial.Remove(this);
+					}
+					this._Tbl_Discapacidad1.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_Inicial.Add(this);
+						this._Dis_id = value.Dis_id;
+					}
+					else
+					{
+						this._Dis_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Discapacidad1");
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Identidad_de_Genero_Tbl_Inicial", Storage="_Tbl_Identidad_de_Genero", ThisKey="IdtGen_id", OtherKey="IdtGen_id", IsForeignKey=true)]
 		public Tbl_Identidad_de_Genero Tbl_Identidad_de_Genero
 		{
@@ -2989,6 +3673,40 @@ namespace CapaDatos
 						this._IdtGen_id = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Tbl_Identidad_de_Genero");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Identidad_de_Genero1_Tbl_Inicial", Storage="_Tbl_Identidad_de_Genero1", ThisKey="IdtGen_id", OtherKey="IdtGen_id", IsForeignKey=true)]
+		public Tbl_Identidad_de_Genero1 Tbl_Identidad_de_Genero1
+		{
+			get
+			{
+				return this._Tbl_Identidad_de_Genero1.Entity;
+			}
+			set
+			{
+				Tbl_Identidad_de_Genero1 previousValue = this._Tbl_Identidad_de_Genero1.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Identidad_de_Genero1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Identidad_de_Genero1.Entity = null;
+						previousValue.Tbl_Inicial.Remove(this);
+					}
+					this._Tbl_Identidad_de_Genero1.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_Inicial.Add(this);
+						this._IdtGen_id = value.IdtGen_id;
+					}
+					else
+					{
+						this._IdtGen_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Identidad_de_Genero1");
 				}
 			}
 		}
@@ -3057,6 +3775,74 @@ namespace CapaDatos
 						this._Rel_id = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Tbl_Religion");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_OrientacionSexual1_Tbl_Inicial", Storage="_Tbl_OrientacionSexual1", ThisKey="OrSex_id", OtherKey="OrSex_id", IsForeignKey=true)]
+		public Tbl_OrientacionSexual1 Tbl_OrientacionSexual1
+		{
+			get
+			{
+				return this._Tbl_OrientacionSexual1.Entity;
+			}
+			set
+			{
+				Tbl_OrientacionSexual1 previousValue = this._Tbl_OrientacionSexual1.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_OrientacionSexual1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_OrientacionSexual1.Entity = null;
+						previousValue.Tbl_Inicial.Remove(this);
+					}
+					this._Tbl_OrientacionSexual1.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_Inicial.Add(this);
+						this._OrSex_id = value.OrSex_id;
+					}
+					else
+					{
+						this._OrSex_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_OrientacionSexual1");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Religion1_Tbl_Inicial", Storage="_Tbl_Religion1", ThisKey="Rel_id", OtherKey="Rel_id", IsForeignKey=true)]
+		public Tbl_Religion1 Tbl_Religion1
+		{
+			get
+			{
+				return this._Tbl_Religion1.Entity;
+			}
+			set
+			{
+				Tbl_Religion1 previousValue = this._Tbl_Religion1.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Religion1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Religion1.Entity = null;
+						previousValue.Tbl_Inicial.Remove(this);
+					}
+					this._Tbl_Religion1.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_Inicial.Add(this);
+						this._Rel_id = value.Rel_id;
+					}
+					else
+					{
+						this._Rel_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Religion1");
 				}
 			}
 		}
@@ -3245,7 +4031,7 @@ namespace CapaDatos
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_OrientacionSexual")]
-	public partial class Tbl_OrientacionSexual : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class Tbl_OrientacionSexual1 : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -3270,7 +4056,7 @@ namespace CapaDatos
     partial void OnOrSex_estadoChanged();
     #endregion
 		
-		public Tbl_OrientacionSexual()
+		public Tbl_OrientacionSexual1()
 		{
 			this._Tbl_Inicial = new EntitySet<Tbl_Inicial>(new Action<Tbl_Inicial>(this.attach_Tbl_Inicial), new Action<Tbl_Inicial>(this.detach_Tbl_Inicial));
 			OnCreated();
@@ -3336,7 +4122,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_OrientacionSexual_Tbl_Inicial", Storage="_Tbl_Inicial", ThisKey="OrSex_id", OtherKey="OrSex_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_OrientacionSexual1_Tbl_Inicial", Storage="_Tbl_Inicial", ThisKey="OrSex_id", OtherKey="OrSex_id")]
 		public EntitySet<Tbl_Inicial> Tbl_Inicial
 		{
 			get
@@ -3372,13 +4158,13 @@ namespace CapaDatos
 		private void attach_Tbl_Inicial(Tbl_Inicial entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_OrientacionSexual = this;
+			entity.Tbl_OrientacionSexual1 = this;
 		}
 		
 		private void detach_Tbl_Inicial(Tbl_Inicial entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_OrientacionSexual = null;
+			entity.Tbl_OrientacionSexual1 = null;
 		}
 	}
 	
@@ -5295,7 +6081,7 @@ namespace CapaDatos
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Religion")]
-	public partial class Tbl_Religion : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class Tbl_Religion1 : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -5320,7 +6106,7 @@ namespace CapaDatos
     partial void OnRel_estadoChanged();
     #endregion
 		
-		public Tbl_Religion()
+		public Tbl_Religion1()
 		{
 			this._Tbl_Inicial = new EntitySet<Tbl_Inicial>(new Action<Tbl_Inicial>(this.attach_Tbl_Inicial), new Action<Tbl_Inicial>(this.detach_Tbl_Inicial));
 			OnCreated();
@@ -5386,7 +6172,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Religion_Tbl_Inicial", Storage="_Tbl_Inicial", ThisKey="Rel_id", OtherKey="Rel_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Religion1_Tbl_Inicial", Storage="_Tbl_Inicial", ThisKey="Rel_id", OtherKey="Rel_id")]
 		public EntitySet<Tbl_Inicial> Tbl_Inicial
 		{
 			get
@@ -5422,13 +6208,13 @@ namespace CapaDatos
 		private void attach_Tbl_Inicial(Tbl_Inicial entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_Religion = this;
+			entity.Tbl_Religion1 = this;
 		}
 		
 		private void detach_Tbl_Inicial(Tbl_Inicial entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_Religion = null;
+			entity.Tbl_Religion1 = null;
 		}
 	}
 	
@@ -5870,7 +6656,7 @@ namespace CapaDatos
 		}
 	}
 	
-	public partial class Buscar_CargoInstitucionalResult
+	public partial class ListarXEstadoActivo_CargoInstitucionalResult
 	{
 		
 		private int _CargoIntsi_id;
@@ -5879,7 +6665,7 @@ namespace CapaDatos
 		
 		private string _CargoInsti_estado;
 		
-		public Buscar_CargoInstitucionalResult()
+		public ListarXEstadoActivo_CargoInstitucionalResult()
 		{
 		}
 		
@@ -5932,63 +6718,125 @@ namespace CapaDatos
 		}
 	}
 	
-	public partial class Listar_CargoInstitucionalResult
+	public partial class ListarXEstadoActivo_EstructuraDosResult
 	{
 		
-		private int _CargoIntsi_id;
+		private int _EstructuraDos_id;
 		
-		private string _CargoInsti_nom;
+		private string _EstructuraDos_nom;
 		
-		private string _CargoInsti_estado;
+		private string _EstructuraDos_estado;
 		
-		public Listar_CargoInstitucionalResult()
+		public ListarXEstadoActivo_EstructuraDosResult()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CargoIntsi_id", DbType="Int NOT NULL")]
-		public int CargoIntsi_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstructuraDos_id", DbType="Int NOT NULL")]
+		public int EstructuraDos_id
 		{
 			get
 			{
-				return this._CargoIntsi_id;
+				return this._EstructuraDos_id;
 			}
 			set
 			{
-				if ((this._CargoIntsi_id != value))
+				if ((this._EstructuraDos_id != value))
 				{
-					this._CargoIntsi_id = value;
+					this._EstructuraDos_id = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CargoInsti_nom", DbType="VarChar(100)")]
-		public string CargoInsti_nom
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstructuraDos_nom", DbType="VarChar(100)")]
+		public string EstructuraDos_nom
 		{
 			get
 			{
-				return this._CargoInsti_nom;
+				return this._EstructuraDos_nom;
 			}
 			set
 			{
-				if ((this._CargoInsti_nom != value))
+				if ((this._EstructuraDos_nom != value))
 				{
-					this._CargoInsti_nom = value;
+					this._EstructuraDos_nom = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CargoInsti_estado", DbType="VarChar(1)")]
-		public string CargoInsti_estado
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstructuraDos_estado", DbType="VarChar(1)")]
+		public string EstructuraDos_estado
 		{
 			get
 			{
-				return this._CargoInsti_estado;
+				return this._EstructuraDos_estado;
 			}
 			set
 			{
-				if ((this._CargoInsti_estado != value))
+				if ((this._EstructuraDos_estado != value))
 				{
-					this._CargoInsti_estado = value;
+					this._EstructuraDos_estado = value;
+				}
+			}
+		}
+	}
+	
+	public partial class ListarXEstadoActivo_ZonaResult
+	{
+		
+		private int _Zona_id;
+		
+		private string _Zona_nom;
+		
+		private string _Zona_estado;
+		
+		public ListarXEstadoActivo_ZonaResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Zona_id", DbType="Int NOT NULL")]
+		public int Zona_id
+		{
+			get
+			{
+				return this._Zona_id;
+			}
+			set
+			{
+				if ((this._Zona_id != value))
+				{
+					this._Zona_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Zona_nom", DbType="VarChar(50)")]
+		public string Zona_nom
+		{
+			get
+			{
+				return this._Zona_nom;
+			}
+			set
+			{
+				if ((this._Zona_nom != value))
+				{
+					this._Zona_nom = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Zona_estado", DbType="VarChar(1)")]
+		public string Zona_estado
+		{
+			get
+			{
+				return this._Zona_estado;
+			}
+			set
+			{
+				if ((this._Zona_estado != value))
+				{
+					this._Zona_estado = value;
 				}
 			}
 		}

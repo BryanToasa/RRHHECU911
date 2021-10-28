@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using CapaDatos;
+using CapaNegocios;
 
 namespace RRHHECU911.vistas.data
 {
@@ -16,7 +17,7 @@ namespace RRHHECU911.vistas.data
         {
             if (!IsPostBack)
             {
-                CargarCargo();
+                CargarCargoActivo();
             }
         }
         protected void Btn_RegistarCargo_Click(object sender, EventArgs e)
@@ -34,18 +35,17 @@ namespace RRHHECU911.vistas.data
             {
                 dc.Registro_CargoInstitucional(TxtNombreCargo.Text, TxtEstadoCargo.Text);
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados ^-^')", true);
-                LimpiarPantalla();
+                CargarCargoActivo();
             }
         }
 
-        private void CargarCargo()
+        private void CargarCargoActivo()
         {
-            var Cargo = dc.Listar_CargoInstitucional();
-
+            var Cargo = dc.ListarXEstadoActivo_CargoInstitucional();
             grvCargo.DataSource = Cargo.ToList();
-
             grvCargo.DataBind();
         }
+
 
 
         private void LimpiarPantalla()
@@ -60,6 +60,24 @@ namespace RRHHECU911.vistas.data
 
         protected void grvCargo_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            int codigo = Convert.ToInt32(e.CommandArgument);
+            if (e.CommandName == "Actualizar")
+            {
+                Response.Redirect("~/vistas/data/cargo.aspx?cod=" + codigo, true);
+            }
+            // CODIGO ELIMINAR
+            else if (e.CommandName == "Eliminar")
+            {
+
+                Tbl_CargoInstitucional CINT = new Tbl_CargoInstitucional();
+                // VARIABLE CON LAS INICIo
+                CINT = Cn_Cargos.ObtenerCargoXid(codigo);
+                if (CINT != null)
+                {
+                   Cn_Cargos.delete(CINT);
+                    CargarCargoActivo();
+                }
+            }
 
         }
     }

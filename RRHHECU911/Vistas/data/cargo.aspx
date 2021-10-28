@@ -94,7 +94,6 @@
                 <div class="card-body">
                     <h4 class="card-title">Agregar nuevo cargo</h4>
                     <h6 class="card-subtitle"></h6>
-
                     <%--QUI VA UN <DIV> Y SE BORRA LO DE ARRIBA HASTA DESPUES DE TABLA CARGOS--%>
                     <asp:GridView ID="grvCargo" runat="server" OnRowCommand="grvCargo_RowCommand" AutoGenerateColumns="false" GridLines="None" CssClass="table table-hover text-center table-responsive">
                         <Columns>
@@ -175,6 +174,7 @@
                     </div>
 
                 </div>
+
                 <div class="modal-footer">
                     <asp:Button ID="Btn_RegistarCargo" runat="server" Text="Guardar" OnClick="Btn_RegistarCargo_Click" CssClass="btn btn-info" />
 
