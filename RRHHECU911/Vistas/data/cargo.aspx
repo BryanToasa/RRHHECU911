@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Dashboard.Master" AutoEventWireup="true" CodeBehind="cargo.aspx.cs" Inherits="RRHHECU911.vistas.data.cargo" %>
+﻿ <%@ Page Title="" Language="C#" MasterPageFile="~/Dashboard.Master" AutoEventWireup="true" CodeBehind="cargo.aspx.cs" Inherits="RRHHECU911.vistas.data.cargo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="chp_title" runat="server">
     Cargo Institucional
@@ -9,7 +9,7 @@
     <link href='<%= Page.ResolveUrl("~/assets/plugins/bootstrap-select/bootstrap-select.min.css") %>' rel="stylesheet">
     <link href='<%= Page.ResolveUrl("~/assets/plugins/bootstrap-switch/bootstrap-switch.min.css")%>' rel="stylesheet">
     <link href='<%= Page.ResolveUrl("~/css/pages/bootstrap-switch.css")%>' rel="stylesheet">
-</asp:Content>
+ </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="chp_breadcrumb" runat="server">
     <div class="col-md-5 align-self-center">
         <h3 class="text-themecolor">Nuevo Cargo</h3>
@@ -95,7 +95,8 @@
                     <h4 class="card-title">Agregar nuevo cargo</h4>
                     <h6 class="card-subtitle"></h6>
                     <%--QUI VA UN <DIV> Y SE BORRA LO DE ARRIBA HASTA DESPUES DE TABLA CARGOS--%>
-                    <asp:GridView ID="grvCargo" runat="server" OnRowCommand="grvCargo_RowCommand" AutoGenerateColumns="false" GridLines="None" CssClass="table table-hover text-center table-responsive">
+                  <%--8/11/21 descomentar--%>
+                <%--  <%--  <asp:GridView ID="grvCargo" runat="server" OnRowCommand="grvCargo_RowCommand" AutoGenerateColumns="false" GridLines="None" CssClass="table table-hover text-center table-responsive">
                         <Columns>
                             <asp:TemplateField HeaderText="Codigo">
                                 <ItemTemplate>
@@ -121,21 +122,48 @@
                             </asp:TemplateField>
                             <asp:TemplateField ItemStyle-Width="17" HeaderStyle-Width="17">
                                 <ItemTemplate>
-                                    <asp:LinkButton ID="lnbActualizar" Width="16" Height="16" CommandArgument='<%#Eval("CargoIntsi_id")%>' CommandName="Actualizar" OnClientClick="return confirm('Esta seguro que desea Actualizar este registro..')" runat="server"><i class="fas fa-check"></i></asp:LinkButton>
+                                    <asp:LinkButton ID="lnbActualizar" runat="server" Text="Actualizar" OnClick="lnbActualizar_Click"></asp:LinkButton>
+                                    <%--<asp:LinkButton ID="lnbActualizar" Width="16" Height="16" runat="server"><i class="fas fa-check"></i></asp:LinkButton>
                                 </ItemTemplate>
                                 <HeaderStyle Width="17px" />
                                 <ItemStyle Width="17px" />
                             </asp:TemplateField>
                         </Columns>
 
-                    </asp:GridView>
-
+                    </asp:GridView>--%>
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" DataKeyNames="CargoIntsi_id" 
+                    OnRowDataBound="GridView1_RowDataBound" OnRowEditing="GridView1_RowEditing" OnRowCancelingEdit="GridView1_RowCancelingEdit" 
+                    OnRowUpdating="GridView1_RowUpdating" OnRowDeleting="GridView1_RowDeleting" EmptyDataText="Que hace esto" CssClass="table table-hover text-center table-responsive"
+                    OnRowCommand="GridView1_RowCommand">
+                    <Columns>
+                        <asp:TemplateField HeaderText="Nombre">
+                            <ItemTemplate>
+                                <asp:Label ID="lbl_NomCargo" runat="server" Text='<%# Eval ("CargoInsti_nom") %>'></asp:Label>
+                            </ItemTemplate>
+                            <EditItemTemplate>
+                                <asp:TextBox ID="txtNomCargo" runat="server" Text='<%# Eval ("CargoInsti_nom") %>'> </asp:TextBox>
+                            </EditItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Estado">
+                            <ItemTemplate>
+                                <asp:Label ID="lbl_EstaCargo" runat="server" Text='<%# Eval ("CargoInsti_estado") %>'></asp:Label>
+                            </ItemTemplate>   
+                        </asp:TemplateField>
+                        <asp:CommandField ButtonType="Link" ShowEditButton="true"  ItemStyle-Width="150" />
+                        <asp:TemplateField>
+                                <ItemTemplate>
+                                    <asp:LinkButton ID="lnbEliminar" Width="16" Height="16" CommandArgument='<%#Eval("CargoIntsi_id")%>' CommandName="Eliminar" OnClientClick="return confirm('Esta seguro que desea eliminar este registro..')" runat="server"><i class="fas fa-trash"></i></asp:LinkButton>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                    </Columns>
+                </asp:GridView>
                 </div>
             </div>
         </div>
     </div>
     <%-- Boton de Agregar Cargo--%>
-        <tfoot>
+     
+    <tfoot>
             <tr>
                 <td colspan="2">
                     <button type="button" class="btn btn-info btn-rounded" data-toggle="modal" data-target="#add-contact">Agregar nuevo contacto</button>
@@ -145,11 +173,10 @@
                     <div class="text-right">
                         <ul class="pagination"></ul>
                     </div>
-
                 </td>
-
             </tr>
         </tfoot>
+        
     <%--Formulario de nuevos Cargos--%>
     <div id="add-contact" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
