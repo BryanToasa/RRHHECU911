@@ -27,66 +27,7 @@
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="chp_contenido" runat="server">
-    <%-- <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Agregar nuevo cargo</h4>
-                    <h6 class="card-subtitle"></h6>
-                    <div class="table-responsive">
-                        <table id="demo-foo-addrow" class="table m-t-30 table-hover contact-list" data-page-size="10">
-                            <thead>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Cargo</th>
-                                    <th>Estado</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <!--AQUI ESTA LA PRIMER FILA DE LA TABLA CARGOS-->
-                                    <td>1</td>
-                                    <td>genelia@gmail.com</td>
-                                    <td>
-                                        <div class="bt-switch">
-                                            <div class="m-b-30">
-                                                <input type="checkbox" checked data-on-color="warning" data-off-color="danger" data-on-text="Enabled" data-off-text="Disabled" />
-                                            </div>
-                                        </div>
-
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete">
-                                            <i class="ti-close" aria-hidden="true"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>arijit@gmail.com</td>
-                                    <td>
-                                         <div class="bt-switch">
-                                            <div class="m-b-30">
-                                                <input type="checkbox" checked data-on-color="warning" data-off-color="danger" data-on-text="Enabled" data-off-text="Disabled" />
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                    </td>
-                                </tr>
-
-                            </tbody>
-                            
-
-                        </table>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>--%>
+  
     <%-- Tabla de Cargos--%>
     <div class="row">
         <div class="col-12">
@@ -94,47 +35,9 @@
                 <div class="card-body">
                     <h4 class="card-title">Agregar nuevo cargo</h4>
                     <h6 class="card-subtitle"></h6>
-                    <%--QUI VA UN <DIV> Y SE BORRA LO DE ARRIBA HASTA DESPUES DE TABLA CARGOS--%>
-                  <%--8/11/21 descomentar--%>
-                <%--  <%--  <asp:GridView ID="grvCargo" runat="server" OnRowCommand="grvCargo_RowCommand" AutoGenerateColumns="false" GridLines="None" CssClass="table table-hover text-center table-responsive">
-                        <Columns>
-                            <asp:TemplateField HeaderText="Codigo">
-                                <ItemTemplate>
-                                    <asp:Label ID="id_cargo" runat="server" Text='<%#Eval("CargoIntsi_id")%>'></asp:Label>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Nombres">
-                                <ItemTemplate>
-                                    <asp:Label ID="Nombre_cargo" runat="server" Text='<%#Eval("CargoInsti_nom")%>'></asp:Label>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="estado">
-                                <ItemTemplate>
-                                    <asp:Label ID="estado" runat="server" Text='<%#Eval("CargoInsti_estado")%>'></asp:Label>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField ItemStyle-Width="17" HeaderStyle-Width="17">
-                                <ItemTemplate>
-                                    <asp:LinkButton ID="lnbEliminar" Width="16" Height="16" CommandArgument='<%#Eval("CargoIntsi_id")%>' CommandName="Eliminar" OnClientClick="return confirm('Esta seguro que desea eliminar este registro..')" runat="server"><i class="fas fa-trash"></i></asp:LinkButton>
-                                </ItemTemplate>
-                                <HeaderStyle Width="17px" />
-                                <ItemStyle Width="17px" />
-                            </asp:TemplateField>
-                            <asp:TemplateField ItemStyle-Width="17" HeaderStyle-Width="17">
-                                <ItemTemplate>
-                                    <asp:LinkButton ID="lnbActualizar" runat="server" Text="Actualizar" OnClick="lnbActualizar_Click"></asp:LinkButton>
-                                    <%--<asp:LinkButton ID="lnbActualizar" Width="16" Height="16" runat="server"><i class="fas fa-check"></i></asp:LinkButton>
-                                </ItemTemplate>
-                                <HeaderStyle Width="17px" />
-                                <ItemStyle Width="17px" />
-                            </asp:TemplateField>
-                        </Columns>
-
-                    </asp:GridView>--%>
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" DataKeyNames="CargoIntsi_id" 
                     OnRowDataBound="GridView1_RowDataBound" OnRowEditing="GridView1_RowEditing" OnRowCancelingEdit="GridView1_RowCancelingEdit" 
-                    OnRowUpdating="GridView1_RowUpdating" OnRowDeleting="GridView1_RowDeleting" EmptyDataText="Que hace esto" CssClass="table table-hover text-center table-responsive"
-                    OnRowCommand="GridView1_RowCommand">
+                    OnRowUpdating="GridView1_RowUpdating" OnRowCommand="GridView1_RowCommand">
                     <Columns>
                         <asp:TemplateField HeaderText="Nombre">
                             <ItemTemplate>
@@ -149,10 +52,10 @@
                                 <asp:Label ID="lbl_EstaCargo" runat="server" Text='<%# Eval ("CargoInsti_estado") %>'></asp:Label>
                             </ItemTemplate>   
                         </asp:TemplateField>
-                        <asp:CommandField ButtonType="Link" ShowEditButton="true"  ItemStyle-Width="150" />
+                                <asp:CommandField ButtonType="Link" ShowEditButton="true"  ItemStyle-Width="150"/>
                         <asp:TemplateField>
                                 <ItemTemplate>
-                                    <asp:LinkButton ID="lnbEliminar" Width="16" Height="16" CommandArgument='<%#Eval("CargoIntsi_id")%>' CommandName="Eliminar" OnClientClick="return confirm('Esta seguro que desea eliminar este registro..')" runat="server"><i class="fas fa-trash"></i></asp:LinkButton>
+                                    <asp:LinkButton ID="lnbEliminar" Width="16" Height="16" CommandArgument='<%#Eval("CargoIntsi_id")%>' CommandName="Eliminar" OnClientClick="return confirm('Esta seguro que desea eliminar este registro..')" runat="server"><i class="fa fa-trash"></i></asp:LinkButton>
                                 </ItemTemplate>
                             </asp:TemplateField>
                     </Columns>

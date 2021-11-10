@@ -18,30 +18,55 @@ namespace RRHHECU911.vistas.data
 
         protected void Btn_RegistarEstructuraDos_Click(object sender, EventArgs e)
         {
-            Registrar_EstructuraDos();
+            //Registrar_EstructuraDos();
         }
 
-        private void Registrar_EstructuraDos()
-        {
-           if(string.IsNullOrEmpty(Txt_NombreEstruDos.Text) || string.IsNullOrEmpty(txt_EstadoEstuDos.Text)) 
-            {
-            }
-            else
-            {
-                dc.Registro_EstructuraDos(Txt_NombreEstruDos.Text, txt_EstadoEstuDos.Text);
-                limpiarPantalla();
-                CargarEstructuraDosXActivo();
-            }
-        }
+        //private void Registrar_EstructuraDos()
+        //{
+        //   if(string.IsNullOrEmpty(Txt_NombreEstruDos.Text) || string.IsNullOrEmpty(txt_EstadoEstuDos.Text)) 
+        //    {
+        //    }
+        //    else
+        //    {
+        //        dc.Registro_EstructuraDos(Txt_NombreEstruDos.Text, txt_EstadoEstuDos.Text);
+        //        limpiarPantalla();
+        //        CargarEstructuraDosXActivo();
+        //    }
+        //}
 
         private void CargarEstructuraDosXActivo()
         {
             var Estructura = dc.ListarXEstadoActivo_EstructuraDos();
         }
 
-        private void limpiarPantalla()
+        protected void gvrEstructuraDos_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            Txt_NombreEstruDos.Text = txt_EstadoEstuDos.Text = "";
+
         }
+
+        protected void gvrEstructuraDos_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+
+        }
+
+        protected void gvrEstructuraDos_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+
+        }
+
+        protected void gvrEstructuraDos_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+
+        }
+
+        protected void gvrEstructuraDos_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+
+        }
+
+        //private void limpiarPantalla()
+        //{
+        //    Txt_NombreEstruDos.Text = txt_EstadoEstuDos.Text = "";
+        //}
     }
 }

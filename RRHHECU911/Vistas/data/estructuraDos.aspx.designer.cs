@@ -15,22 +15,31 @@ namespace RRHHECU911.vistas.data
     {
 
         /// <summary>
-        /// Control Txt_NombreEstruDos.
+        /// Control gvrEstructuraDos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Txt_NombreEstruDos;
+        protected global::System.Web.UI.WebControls.GridView gvrEstructuraDos;
 
         /// <summary>
-        /// Control txt_EstadoEstuDos.
+        /// Control Txt_NomEstructuraDos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_EstadoEstuDos;
+        protected global::System.Web.UI.WebControls.TextBox Txt_NomEstructuraDos;
+
+        /// <summary>
+        /// Control Txt_EstaEstructuraDos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Txt_EstaEstructuraDos;
 
         /// <summary>
         /// Control Btn_RegistarEstructuraDos.

@@ -29,97 +29,87 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Agregar nueva Estructura Dos</h4>
+                    <h4 class="card-title">Agregar nuevo Estructura Dos</h4>
                     <h6 class="card-subtitle"></h6>
-                    <div class="table-responsive">
-                        <table id="demo-foo-addrow" class="table m-t-30 table-hover contact-list" data-page-size="10">
-                            <thead>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Estructura Dos</th>
-                                    <th>Estado</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <!--AQUI ESTA LA PRIMER FILA DE LA TABLA Estructura Dos-->
-                                    <td>1</td>
-                                    <td>genelia@gmail.com</td>
-                                    <td>
-                                        <input id="cb_estado_zona" type="checkbox" data-on-text="Long Text" />
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>arijit@gmail.com</td>
-                                    <td>Estado2</td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                    </td>
-                                </tr>
-
-
-                            </tbody>
-
-                            <tfoot>
-
-                                <tr>
-                                    <td colspan="2">
-                                        <button type="button" class="btn btn-info btn-rounded" data-toggle="modal" data-target="#add-contact">Agregar nueva estructura dos</button>
-                                    </td>
-                                    <div id="add-contact" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                    <h4 class="modal-title" id="myModalLabel">Nueva estructura dos</h4>
-                                                </div>
-                                                <!--AQUI EDITAS EL CUADRO DE AGREGAR NUEVOEstructura Dos-->
-
-
-                                                <div class="modal-body">
-                                                    <div class="form-horizontal form-material">
-                                                        <div class="form-group">
-                                                            <div class="col-md-12 m-b-20">
-                                                                <!--AQUI EDITAS EL CUADRO DE Nombre NUEVO Estructura Dos-->
-                                                                <asp:TextBox ID="Txt_NombreEstruDos" runat="server" class="form-control" placeholder="Nueva Estructura" ></asp:TextBox>
-
-                                                              
-                                                            </div>
-                                                            <div class="col-md-12 m-b-20">
-                                                                <!--AQUI EDITAS EL CUADRO DE Nombre NUEVO Estructura Dos-->
-                                                                <asp:TextBox ID="txt_EstadoEstuDos" runat="server" class="form-control" placeholder="Estado Estructura" ></asp:TextBox>
-                                                             
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <asp:Button ID="Btn_RegistarEstructuraDos" Text="Guardar" OnClick="Btn_RegistarEstructuraDos_Click" CssClass="btn btn-info" runat="server" />
-                                                    <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cancelar</button>
-                                                </div>
-                                            </div>
-                                            <!-- /.modal-content -->
-                                        </div>
-                                        <!-- /.modal-dialog -->
-                                    </div>
-                                    <td colspan="7">
-                                        <div class="text-right">
-                                            <ul class="pagination"></ul>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div>
+                <asp:GridView ID="gvrEstructuraDos" runat="server" AutoGenerateColumns="false" DataKeyNames="EstructuraDos_id" 
+                    OnRowDataBound="gvrEstructuraDos_RowDataBound" OnRowEditing="gvrEstructuraDos_RowEditing" OnRowCancelingEdit="gvrEstructuraDos_RowCancelingEdit" 
+                    OnRowUpdating="gvrEstructuraDos_RowUpdating" OnRowCommand="gvrEstructuraDos_RowCommand">
+                    <Columns>
+                        <asp:TemplateField HeaderText="Nombre">
+                            <ItemTemplate>
+                                <asp:Label ID="lbl_NomCargo" runat="server" Text='<%# Eval ("EstructuraDos_nom") %>'></asp:Label>
+                            </ItemTemplate>
+                            <EditItemTemplate>
+                                <asp:TextBox ID="txtNomCargo" runat="server" Text='<%# Eval ("EstructuraDos_nom") %>'> </asp:TextBox>
+                            </EditItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Estado">
+                            <ItemTemplate>
+                                <asp:Label ID="lbl_EstaCargo" runat="server" Text='<%# Eval ("EstructuraDos_estado") %>'></asp:Label>
+                            </ItemTemplate>   
+                        </asp:TemplateField>
+                                <asp:CommandField ButtonType="Link" ShowEditButton="true"  ItemStyle-Width="150"/>
+                        <asp:TemplateField>
+                                <ItemTemplate>
+                                    <asp:LinkButton ID="lnbEliminar" Width="16" Height="16" CommandArgument='<%#Eval("EstructuraDos_id")%>' CommandName="Eliminar" OnClientClick="return confirm('Esta seguro que desea eliminar este registro..')" runat="server"><i class="fa fa-trash"></i></asp:LinkButton>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                    </Columns>
+                </asp:GridView>
                 </div>
             </div>
         </div>
+    </div>
+    <%-- Boton de Agregar Cargo--%>
+     
+    <tfoot>
+            <tr>
+                <td colspan="2">
+                    <button type="button" class="btn btn-info btn-rounded" data-toggle="modal" data-target="#add-contact">Agregar nuevo contacto</button>
+                </td>
+
+                <td colspan="7">
+                    <div class="text-right">
+                        <ul class="pagination"></ul>
+                    </div>
+                </td>
+            </tr>
+        </tfoot>
+        
+    <%--Formulario de nuevos Cargos--%>
+    <div id="add-contact" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="myModalLabel">Nuevo Cargo</h4>
+                </div>
+                <!--AQUI EDITAS EL CUADRO DE AGREGAR NUEVO CARGoxO-->
+                <div class="modal-body">
+                    <div class="form-horizontal form-material">
+                        <div class="form-group">
+                            <div class="col-md-12 m-b-20">
+                                <!--AQUI EDITAS EL CUADRO DE ID NUEVO CARGO-->
+                                <asp:TextBox ID="Txt_NomEstructuraDos" runat="server" class="form-control" placeholder="Nueva Estructura Dos"></asp:TextBox>
+                            </div>
+                            <div class="col-md-12 m-b-20">
+                                <!--AQUI EDITAS EL CUADRO DE CARGO NUEVO CARGO-->
+                                <asp:TextBox ID="Txt_EstaEstructuraDos" runat="server" class="form-control" placeholder="Estado"></asp:TextBox>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <asp:Button ID="Btn_RegistarEstructuraDos" runat="server" Text="Guardar" OnClick="Btn_RegistarEstructuraDos_Click" CssClass="btn btn-info" />
+
+                    <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
     </div>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="chp_scripts" runat="server">

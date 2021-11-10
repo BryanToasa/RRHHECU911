@@ -16,26 +16,22 @@ namespace RRHHECU911.vistas.data
         {
             if (!IsPostBack)
             {
-                CargarZonaXActivo();
+                Listar_ZonaXActivo();
             }
 
         }
-
-        private void CargarZonaXActivo()
+        //LISTAR
+        private void Listar_ZonaXActivo()
         {
-            var Zona = dc.ListarXEstadoActivo_Zona();
-
-            grvZona.DataSource = Zona.ToList();
-
-           grvZona.DataBind();
+            gvrZona.DataSource = from Tbl_Zona in dc.ListarXEstadoActivo_Zona()
+                                 select Tbl_Zona;
+            gvrZona.DataBind();
         }
-
-        protected void Btn_GuardarZona_Click(object sender, EventArgs e)
+        protected void Btn_RegistrarZona_Click(object sender, EventArgs e)
         {
             Registrar_Zona();
-
         }
-
+        //REGISTRAR
         private void Registrar_Zona()
         {
             if (string.IsNullOrEmpty(Txt_NombreZona.Text) || string.IsNullOrEmpty(Txt_EstadoZona.Text))
@@ -46,26 +42,31 @@ namespace RRHHECU911.vistas.data
             {
                 dc.Registro_Zona(Txt_NombreZona.Text, Txt_EstadoZona.Text);
                 limpiarPantalla();
-                CargarZonaXActivo();
+                Listar_ZonaXActivo();
             }
 
         }
-
-        private void limpiarPantalla()
+        //ACTUALIZAR
+        protected void gvrZona_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            Txt_NombreZona.Text = Txt_EstadoZona.Text = "";
+            GridViewRow row = gvrZona.Rows[e.RowIndex];
+            int Zona_id = Convert.ToInt32(gvrZona.DataKeys[e.RowIndex].Values[0]);
+            string Nombre_Zona = (row.FindControl("txt_NomZona") as TextBox).Text;
+            Tbl_Zona zona = (from q in dc.Tbl_Zona
+                             where q.Zona_id == Zona_id
+                             select q).First();
+            zona.Zona_nom = Nombre_Zona;
+            dc.SubmitChanges();
+            gvrZona.EditIndex = -1;
+            Listar_ZonaXActivo();
         }
-
         //ELIMINAR
         protected void grvZona_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             int codigo = Convert.ToInt32(e.CommandArgument);
-            if (e.CommandName == "Actualizar")
-            {
-                Response.Redirect("~/vistas/data/cargo.aspx?cod=" + codigo, true);
-            }
+          
             // CODIGO ELIMINAR
-            else if (e.CommandName == "Eliminar")
+         if (e.CommandName == "Eliminar")
             {
 
                Tbl_Zona Zo = new Tbl_Zona();
@@ -74,15 +75,33 @@ namespace RRHHECU911.vistas.data
                 if (Zo != null)
                 {
                     Cn_Zona.delete(Zo);
-                    CargarZonaXActivo();
+                    Listar_ZonaXActivo();
                 }
             }
 
         }
-
-        protected void Btn_RegistrarZona_Click(object sender, EventArgs e)
+        //LIMPIAR PANTALLA
+        private void limpiarPantalla()
         {
-            Registrar_Zona();
+            Txt_NombreZona.Text = Txt_EstadoZona.Text = "";
         }
+        protected void gvrZona_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            gvrZona.EditIndex = e.NewEditIndex;
+            this.Listar_ZonaXActivo();
+        }
+        protected void gvrZona_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            gvrZona.EditIndex = 1;
+            this.Listar_ZonaXActivo();
+        }
+        protected void gvrZona_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+
+        }
+
+      
+       
+       
     }
 }
