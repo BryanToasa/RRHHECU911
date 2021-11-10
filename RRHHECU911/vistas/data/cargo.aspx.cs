@@ -17,23 +17,22 @@ namespace RRHHECU911.vistas.data
         {
             if (!IsPostBack)
             {
-               Listar_CargoInstitucional();
+                Listar_CargoInstitucional();
             }
         }
-
+        //LISTAR
         private void Listar_CargoInstitucional()
         {
             GridView1.DataSource = from Tbl_CargoInstitucional in dc.ListarXEstadoActivo_CargoInstitucional()
                                    select Tbl_CargoInstitucional;
             GridView1.DataBind();
         }
-        
         protected void Btn_RegistarCargo_Click(object sender, EventArgs e)
         {
             Registar_Cargo_Institucional();
 
         }
-
+        //REGISTRAR
         private void Registar_Cargo_Institucional()
         {
             if (string.IsNullOrEmpty(TxtNombreCargo.Text) || string.IsNullOrEmpty(TxtEstadoCargo.Text))
@@ -47,13 +46,7 @@ namespace RRHHECU911.vistas.data
                 Listar_CargoInstitucional();
             }
         }
-
-        protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
-        {
-           
-            
-
-        }
+        //ACTUALIZAR
         protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             GridViewRow row = GridView1.Rows[e.RowIndex];
@@ -68,27 +61,7 @@ namespace RRHHECU911.vistas.data
             GridView1.EditIndex = -1;
             Listar_CargoInstitucional();
         }
-
-
-        private void CargarCargoActivo()
-        {
-            //var Cargo = dc.ListarXEstadoActivo_CargoInstitucional();
-            //grvCargo.DataSource = Cargo.ToList();
-            //grvCargo.DataBind();
-        }
-
-
-
-        private void LimpiarPantalla()
-        {
-            TxtNombreCargo.Text = TxtEstadoCargo.Text = "";
-        }
-
-        protected void grvCargo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        //ElIMINAR
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             int codigo = Convert.ToInt32(e.CommandArgument);
@@ -96,7 +69,6 @@ namespace RRHHECU911.vistas.data
             // CODIGO ELIMINAR
             if (e.CommandName == "Eliminar")
             {
-
                 Tbl_CargoInstitucional CINT = new Tbl_CargoInstitucional();
                 // VARIABLE CON LAS INICIO
                 CINT = Cn_Cargos.ObtenerCargoXid(codigo);
@@ -108,6 +80,17 @@ namespace RRHHECU911.vistas.data
             }
 
         }
+        //LIMPIAR PANTALLA
+        private void LimpiarPantalla()
+        {
+            TxtNombreCargo.Text = TxtEstadoCargo.Text = "";
+        }
+
+        protected void grvCargo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
         {
             GridView1.EditIndex = e.NewEditIndex;
@@ -119,7 +102,7 @@ namespace RRHHECU911.vistas.data
             this.Listar_CargoInstitucional();
 
         }
-      
+
         protected void lnbActualizar_Click(object sender, EventArgs e)
         {
 
@@ -129,12 +112,5 @@ namespace RRHHECU911.vistas.data
         {
 
         }
-
-
-        
-
-       
-
-
     }
 }
