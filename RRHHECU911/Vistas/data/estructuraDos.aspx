@@ -37,15 +37,15 @@
                     <Columns>
                         <asp:TemplateField HeaderText="Nombre">
                             <ItemTemplate>
-                                <asp:Label ID="lbl_NomCargo" runat="server" Text='<%# Eval ("EstructuraDos_nom") %>'></asp:Label>
+                                <asp:Label ID="lbl_NomEstruc" runat="server" Text='<%# Eval ("EstructuraDos_nom") %>'></asp:Label>
                             </ItemTemplate>
                             <EditItemTemplate>
-                                <asp:TextBox ID="txtNomCargo" runat="server" Text='<%# Eval ("EstructuraDos_nom") %>'> </asp:TextBox>
+                                <asp:TextBox ID="txtNomEstruc" runat="server" Text='<%# Eval ("EstructuraDos_nom") %>'> </asp:TextBox>
                             </EditItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Estado">
                             <ItemTemplate>
-                                <asp:Label ID="lbl_EstaCargo" runat="server" Text='<%# Eval ("EstructuraDos_estado") %>'></asp:Label>
+                                <asp:Label ID="lbl_EstaEstruc" runat="server" Text='<%# Eval ("EstructuraDos_estado") %>'></asp:Label>
                             </ItemTemplate>   
                         </asp:TemplateField>
                                 <asp:CommandField ButtonType="Link" ShowEditButton="true"  ItemStyle-Width="150"/>

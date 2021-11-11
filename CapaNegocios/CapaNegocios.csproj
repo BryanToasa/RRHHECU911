@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cn_Cargos.cs" />
+    <Compile Include="Cn_EstructuraDos.cs" />
     <Compile Include="Cn_Zona.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
