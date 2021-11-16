@@ -3406,6 +3406,8 @@
     <Content Include="vistas\data\cargo.aspx" />
     <Content Include="vistas\data\estructuraDos.aspx" />
     <Content Include="vistas\data\estructuraUno.aspx" />
+    <Content Include="vistas\data\partidaGeneral.aspx" />
+    <Content Include="vistas\data\testmap.aspx" />
     <Content Include="vistas\data\zona.aspx" />
     <Content Include="vistas\person\delete.aspx" />
     <Content Include="vistas\person\edit.aspx" />
@@ -3513,6 +3515,20 @@
     </Compile>
     <Compile Include="vistas\data\estructuraUno.aspx.designer.cs">
       <DependentUpon>estructuraUno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vistas\data\partidaGeneral.aspx.cs">
+      <DependentUpon>partidaGeneral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vistas\data\partidaGeneral.aspx.designer.cs">
+      <DependentUpon>partidaGeneral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vistas\data\testmap.aspx.cs">
+      <DependentUpon>testmap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vistas\data\testmap.aspx.designer.cs">
+      <DependentUpon>testmap.aspx</DependentUpon>
     </Compile>
     <Compile Include="vistas\data\zona.aspx.cs">
       <DependentUpon>zona.aspx</DependentUpon>
