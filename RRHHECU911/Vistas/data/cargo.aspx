@@ -23,11 +23,9 @@
             <li class="breadcrumb-item active">Cargo</li>
         </ol>
     </div>
-
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="chp_contenido" runat="server">
-  
     <%-- Tabla de Cargos--%>
     <div class="row">
         <div class="col-12">
@@ -94,7 +92,7 @@
                         <div class="form-group">
                             <div class="col-md-12 m-b-20">
                                 <!--AQUI EDITAS EL CUADRO DE ID NUEVO CARGO-->
-                                <asp:TextBox ID="TxtNombreCargo" runat="server" class="form-control" placeholder="Nuevo Cargo"></asp:TextBox>
+                                <asp:TextBox ID="TxtNombreCargo" runat="server" class="form-control" placeholder="Nuevo Cargo" Style="text-transform: uppercase"></asp:TextBox>
                             </div>
                             <div class="col-md-12 m-b-20">
                                 <!--AQUI EDITAS EL CUADRO DE CARGO NUEVO CARGO-->

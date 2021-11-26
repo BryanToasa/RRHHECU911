@@ -16,7 +16,6 @@
     <script src='<%= Page.ResolveUrl("~/assets/plugins/wizard/steps.js")%>'></script>
 </asp:Content>
 
-
 <asp:Content ID="Content1" ContentPlaceHolderID="chp_title" runat="server">
     Nueva Persona
 </asp:Content>
@@ -77,12 +76,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="wlocation2">Select City : <span class="danger">*</span> </label>
-                                        <select class="custom-select form-control required" id="wlocation20" name="location">
-                                            <option value="">Select City</option>
-                                            <option value="India">India</option>
-                                            <option value="USA">USA</option>
-                                            <option value="Dubai">Dubai</option>
-                                        </select>
+                                          <asp:DropDownList ID="DropCargo" runat="server" class="custom-select form-control required">
+                                                </asp:DropDownList>       
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -127,23 +122,15 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="wlocation2">Select City : <span class="danger">*</span> </label>
-                                        <select class="custom-select form-control required" id="wlocation2" name="location">
-                                            <option value="">Select City</option>
-                                            <option value="India">India</option>
-                                            <option value="USA">USA</option>
-                                            <option value="Dubai">Dubai</option>
-                                        </select>
+                                        <label for="wlocation2">Select City : <span class="danger">*</span> </label>        
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
                                         <label for="wdate2">Date of Birth :</label>
                                         <input type="date" class="form-control" id="wdate2">
                                     </div>
                                 </div>
-                            </div>
-                        </section>
+                            </div>            
                         <!-- Step 2 -->
                         <h6>Step 2</h6>
                         <section>
