@@ -12,12 +12,12 @@ namespace RRHHECU911.vistas.data
     public partial class cargo : System.Web.UI.Page
     {
         private DataClasses1DataContext dc = new DataClasses1DataContext();
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 Listar_CargoInstitucional();
+              
             }
         }
         //LISTAR
@@ -30,7 +30,7 @@ namespace RRHHECU911.vistas.data
         protected void Btn_RegistarCargo_Click(object sender, EventArgs e)
         {
             Registar_Cargo_Institucional();
-
+            LimpiarPantalla();
         }
         //REGISTRAR
         private void Registar_Cargo_Institucional()
@@ -85,12 +85,10 @@ namespace RRHHECU911.vistas.data
         {
             TxtNombreCargo.Text = TxtEstadoCargo.Text = "";
         }
-
         protected void grvCargo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-
         protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
         {
             GridView1.EditIndex = e.NewEditIndex;
@@ -102,12 +100,10 @@ namespace RRHHECU911.vistas.data
             this.Listar_CargoInstitucional();
 
         }
-
         protected void lnbActualizar_Click(object sender, EventArgs e)
         {
 
         }
-
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
 
