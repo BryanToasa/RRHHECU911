@@ -33,5 +33,16 @@ namespace CapaDatos.Properties {
                 return ((string)(this["RRHHECU911ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-GH8860H\\SQLEXPRESS;Initial Catalog=ECURRHH911;Integrated Secu" +
+            "rity=True")]
+        public string ECURRHH911ConnectionString {
+            get {
+                return ((string)(this["ECURRHH911ConnectionString"]));
+            }
+        }
     }
 }

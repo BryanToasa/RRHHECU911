@@ -13,15 +13,15 @@ namespace CapaNegocios
         private static DataClasses1DataContext dc = new DataClasses1DataContext();
 
 
-        public static Tbl_CargoInstitucional ObtenerCargoXid(int id) {
-            var CarId = dc.Tbl_CargoInstitucional.FirstOrDefault(Car => Car.CargoIntsi_id.Equals(id) && Car.CargoInsti_estado == "A");
+        public static Tbl_Cargo_Institucional ObtenerCargoXid(int id) {
+            var CarId = dc.Tbl_Cargo_Institucional.FirstOrDefault(Car => Car.Id_Cargo_Institucional.Equals(id) && Car.Estado_Cargo_Institucional == "A");
             return CarId;
                 }
-        public static void delete(Tbl_CargoInstitucional Car)
+        public static void delete(Tbl_Cargo_Institucional Car)
         {
             try
             {
-                Car.CargoInsti_estado = "I";
+                Car.Estado_Cargo_Institucional= "I";
                 dc.SubmitChanges();
             }
             catch (Exception ex)

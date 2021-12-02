@@ -25,29 +25,29 @@ namespace RRHHECU911.vistas
 
         protected void Registar_Click(object sender, EventArgs e)
         {
-            Registrar();
+            //Registrar();
         }
-        public void Registrar()
-        {
-            //Para la fecha
-            //|| string.IsNullOrEmpty(txtFecha.text)
-            if (string.IsNullOrEmpty(Nombre_car.Text) || string.IsNullOrEmpty(Estado_car.Text))
-            {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Asegurese que los campos esten llenos!!')", true);
-            }
-            else
-            {
-                dc.Registro_CargoInstitucional(Nombre_car.Text, Estado_car.Text);
-                limpiar();
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados ^-^')", true);
-            }
+        //public void Registrar()
+        //{
+        //    //Para la fecha
+        //    //|| string.IsNullOrEmpty(txtFecha.text)
+        //    if (string.IsNullOrEmpty(Nombre_car.Text) || string.IsNullOrEmpty(Estado_car.Text))
+        //    {
+        //        ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Asegurese que los campos esten llenos!!')", true);
+        //    }
+        //    else
+        //    {
+        //        dc.Registro_CargoInstitucional(Nombre_car.Text, Estado_car.Text);
+        //        limpiar();
+        //        ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados ^-^')", true);
+        //    }
 
 
-        }
+        //}
 
-        private void limpiar()
-        {
-            Nombre_car.Text=Estado_car.Text="";
-        }
+        //private void limpiar()
+        //{
+        //    Nombre_car.Text=Estado_car.Text="";
+        //}
     }
 }
