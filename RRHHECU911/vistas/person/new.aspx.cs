@@ -19,11 +19,11 @@ namespace RRHHECU911.vistas.person
         }
         private void Llenar_Lista_Cargos()
         {
-            DropCargo.DataSource = from Tbl_CargoInstitucional in dc.ListarXEstadoActivo_CargoInstitucional()
-                                   select Tbl_CargoInstitucional;
-            DropCargo.DataTextField = "CargoInsti_nom";
+            DropCargo.DataSource = from Tbl_Cargo_Institucional in dc.Listar_Estado_Activo_Cargo_Institucional()
+                                   select Tbl_Cargo_Institucional;
+            DropCargo.DataTextField = "Nom_Cargo_Institucional";
 
-            DropCargo.DataValueField = "CargoIntsi_id";
+            DropCargo.DataValueField = "Estado_Cargo_Institucional";
             DropCargo.DataBind();
             DropCargo.Items.Insert(0, new ListItem("[SELECCIONAR]","0"));
         }
