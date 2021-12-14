@@ -31,44 +31,55 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
+                      <asp:ScriptManager Id="ScriptManager1" runat="server" />
                     <h4 class="card-title">Agregar nuevo cargo</h4>
                     <h6 class="card-subtitle"></h6>
-                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" DataKeyNames="Estado_Cargo_Institucional"
-                        OnRowDataBound="GridView1_RowDataBound" OnRowEditing="GridView1_RowEditing" OnRowCancelingEdit="GridView1_RowCancelingEdit"
-                        OnRowUpdating="GridView1_RowUpdating" OnRowCommand="GridView1_RowCommand">
-                        <columns>
-                            <asp:TemplateField HeaderText="Nombre">
-                                <itemtemplate>
-                                    <asp:Label ID="lbl_NomCargo" runat="server" Text='<%# Eval ("Nom_Cargo_Institucional") %>'></asp:Label>
-                                </itemtemplate>
-                                <edititemtemplate>
-                                    <asp:TextBox ID="txtNomCargo" runat="server" Text='<%# Eval ("Nom_Cargo_Institucional") %>'></asp:TextBox>
-                                </edititemtemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="General">
-                                <itemtemplate>
-                                    <asp:Label ID="lbl_EstaCargo" runat="server" Text='<%# Eval ("Numero_Partida_General") %>'></asp:Label>
-                                </itemtemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Individual">
-                                <itemtemplate>
-                                    <asp:Label ID="lbl_individual" runat="server" Text='<%# Eval ("Num_Partida_Individual") %>'></asp:Label>
-                                </itemtemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Estado">
-                                <itemtemplate>
-                                    <asp:Label ID="lbl_EstaCargo" runat="server" Text='<%# Eval ("Estado_Cargo_Institucional") %>'></asp:Label>
-                                </itemtemplate>
-                            </asp:TemplateField>
+                    
+                    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                        <triggers>
+                            <asp:AsyncPostBackTrigger ControlID="GridView1" />
+                        </triggers>
+                        <contenttemplate>
+                            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" DataKeyNames="Id_Cargo_Institucional"
+                                OnRowDataBound="GridView1_RowDataBound" OnRowEditing="GridView1_RowEditing" OnRowCancelingEdit="GridView1_RowCancelingEdit"
+                                OnRowUpdating="GridView1_RowUpdating" OnRowCommand="GridView1_RowCommand">
+                                <columns>
+                                    <asp:TemplateField HeaderText="Nombre">
+                                        <itemtemplate>
+                                            <asp:Label ID="lbl_NomCargo" runat="server" Text='<%# Eval ("Nom_Cargo_Institucional") %>'></asp:Label>
+                                        </itemtemplate>
+                                        <edititemtemplate>
+                                            <asp:TextBox ID="txtNomCargo" runat="server" Text='<%# Eval ("Nom_Cargo_Institucional") %>'></asp:TextBox>
+                                        </edititemtemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="General">
+                                        <itemtemplate>
+                                            <asp:Label ID="lbl_General" runat="server" Text='<%# Eval ("Numero_Partida_General") %>'></asp:Label>
+                                        </itemtemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Individual">
+                                        <itemtemplate>
+                                            <asp:Label ID="lbl_individual" runat="server" Text='<%# Eval ("Num_Partida_Individual") %>'></asp:Label>
+                                        </itemtemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Estado">
+                                        <itemtemplate>
+                                            <asp:Label ID="lbl_EstaCargo" runat="server" Text='<%# Eval ("Estado_Cargo_Institucional") %>'></asp:Label>
+                                        </itemtemplate>
+                                    </asp:TemplateField>
 
-                            <asp:CommandField ButtonType="Link" ShowEditButton="true" ItemStyle-Width="150" />
-                            <asp:TemplateField>
-                                <itemtemplate>
-                                    <asp:LinkButton ID="lnbEliminar" Width="16" Height="16" CommandArgument='<%#Eval("Estado_Cargo_Institucional")%>' CommandName="Eliminar" OnClientClick="return confirm('Esta seguro que desea eliminar este registro..')" runat="server"><i class="fa fa-trash"></i></asp:LinkButton>
-                                </itemtemplate>
-                            </asp:TemplateField>
-                        </columns>
-                    </asp:GridView>
+                                    <asp:CommandField ButtonType="Link" ShowEditButton="true" ItemStyle-Width="150" />
+                                    <asp:TemplateField>
+                                        <itemtemplate>
+                                            <asp:LinkButton ID="lnbEliminar" Width="16" Height="16" CommandArgument='<%#Eval("Id_Cargo_Institucional")%>' CommandName="Eliminar" OnClientClick="return confirm('Esta seguro que desea eliminar este registro..')" runat="server"><i class="fa fa-trash"></i></asp:LinkButton>
+                                        </itemtemplate>
+                                    </asp:TemplateField>
+                                </columns>
+                            </asp:GridView>
+                        </contenttemplate>
+                    </asp:UpdatePanel>
+
+
                 </div>
             </div>
 
@@ -89,13 +100,12 @@
             </td>
         </tr>
     </tfoot>
-
-    <%--Formulario de nuevos Cargos--%>
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     <div id="add-contact" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+
                     <h4 class="modal-title" id="myModalLabel">Nuevo Cargo</h4>
                 </div>
                 <div class="col-md-12 m-b-20">
@@ -103,29 +113,31 @@
                         <div class="form-horizontal form-material">
                             <div class="form-group">
                                 <div class="col-md-12 m-b-20">
-                                    <!--AQUI EDITAS EL CUADRO DE ID NUEVO CARGO-->
-                                    <asp:DropDownList ID="Drop_General"
-                                            DataValueField="id" runat="server"
-                                            class="custom-select form-control required">
-                                        </asp:DropDownList>
-                                </div>
-                                    <div class="col-md-12 m-b-20">
-                                        <asp:DropDownList ID="Drop_Cargo"
+                                  
 
-                                            DataValueField="id" runat="server"
-                                            class="custom-select form-control required">
-                                        </asp:DropDownList>
-                                    </div>
-                                    <div class="col-md-12 m-b-20">
-                                        <asp:DropDownList ID="Drop_Individual"
-                                            DataValueField="id" runat="server"
-                                            class="custom-select form-control required">
-                                        </asp:DropDownList>
-                                    </div>
-                                <div class="col-md-12 m-b-20">
-                                    <!--AQUI EDITAS EL CUADRO DE CARGO NUEVO CARGO-->
-                                    <asp:TextBox ID="TxtEstadoCargo" runat="server" class="form-control" placeholder="Nuevo Estado"></asp:TextBox>
-                                </div>
+                                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                        <triggers>
+                                            <asp:AsyncPostBackTrigger ControlID="Drop_Cargo" />
+                                        </triggers>
+                                        <contenttemplate>
+                                                <asp:DropDownList ID="Drop_Cargo"
+                                                    AutoPostback="True"
+                                                    DataValueField="id" runat="server"
+                                                    class="custom-select form-control required"
+                                                    OnSelectedIndexChanged="Drop_Cargo_SelectedIndexChanged">
+                                                </asp:DropDownList>
+                                                <asp:DropDownList ID="Drop_Individual"
+                                                    DataValueField="id" runat="server"
+                                                    class="custom-select form-control required">
+                                                </asp:DropDownList>
+                                            <div class="col-md-12 m-b-20">
+                                                <!--AQUI EDITAS EL CUADRO DE CARGO NUEVO CARGO-->
+                                                <asp:TextBox ID="TxtEstadoCargo" runat="server" class="form-control" placeholder="Nuevo Estado"></asp:TextBox>
+                                            </div>
+
+
+                                        </contenttemplate>
+                                    </asp:UpdatePanel>
                                 </div>
                             </div>
                         </div>
@@ -142,6 +154,11 @@
             </div>
             <!-- /.modal-dialog -->
         </div>
+    </div>
+
+
+
+    <%--Formulario de nuevos Cargos--%>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="chp_scripts" runat="server">
     <!-- Footable -->

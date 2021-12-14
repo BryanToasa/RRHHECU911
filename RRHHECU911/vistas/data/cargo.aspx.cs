@@ -19,10 +19,7 @@ namespace RRHHECU911.vistas.data
             if (!IsPostBack)
             {
                 Listar_Cargo_Institucional();
-                Llenar_Lista_Cargos();
-                Llenar_Lista_Partida_General() ;
-                Llenar_Lista_Partida_Individual();
-
+                Llenar_Lista_Cargo();  
             }
         }
         //LISTAR
@@ -35,24 +32,19 @@ namespace RRHHECU911.vistas.data
         protected void Btn_RegistarCargo_Click(object sender, EventArgs e)
         {
             Registar_Cargo_Institucional();
-            Llenar_Lista_Cargos();
-            Llenar_Lista_Partida_General();
-            Llenar_Lista_Partida_Individual();
-            ListItem i;
-            i = new ListItem("Juar", "1");
-            Drop_Cargo.Items.Add(i);
+            Llenar_Lista_Cargo();
         }
         //REGISTRAR
         private void Registar_Cargo_Institucional()
         {
-            if (string.IsNullOrEmpty(Drop_Cargo.Text) || string.IsNullOrEmpty(Drop_General.Text) || string.IsNullOrEmpty(Drop_Individual.Text))
+            if (string.IsNullOrEmpty(Drop_Cargo.Text) || string.IsNullOrEmpty(Drop_Cargo.Text))
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Asegurese que los campos esten llenos!!')", true);
             }
             else
             {
 
-                dc.Registro_Cargo_Institucional(Drop_Cargo.SelectedItem.Text,Convert.ToInt32( Drop_General.SelectedValue),Convert.ToInt32( Drop_Individual.SelectedValue), TxtEstadoCargo.Text);
+                dc.Registro_Cargo_Institucional(Drop_Cargo.SelectedItem.Text,Convert.ToInt32(Drop_Individual.SelectedValue),TxtEstadoCargo.Text);
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados ^-^')", true);
                 Listar_Cargo_Institucional();
                 Limpiar_Pantalla();
@@ -78,18 +70,18 @@ namespace RRHHECU911.vistas.data
         {
             int codigo = Convert.ToInt32(e.CommandArgument);
 
-            // CODIGO ELIMINAR
-            //if (e.CommandName == "Eliminar")
-            //{
-            //    Tbl_Cargo_Institucional CINT = new Tbl_Cargo_Institucional();
-            //    // VARIABLE CON LAS INICIO
-            //    CINT = Cn_Cargos.ObtenerCargoXid(codigo);
-            //    if (CINT != null)
-            //    {
-            //        Cn_Cargos.delete(CINT);
-            //        Listar_CargoInstitucional();
-            //    }
-            //}
+            //CODIGO ELIMINAR
+            if (e.CommandName == "Eliminar")
+            {
+                Tbl_Cargo_Institucional CINT = new Tbl_Cargo_Institucional();
+                // VARIABLE CON LAS INICIO
+                CINT = Cn_Cargos.ObtenerCargoXid(codigo);
+                if (CINT != null)
+                {
+                    Cn_Cargos.delete(CINT);
+                    Listar_Cargo_Institucional();
+                }
+            }
 
         }
         //LIMPIAR PANTALLA
@@ -119,34 +111,41 @@ namespace RRHHECU911.vistas.data
         {
 
         }
-        private void Llenar_Lista_Cargos()
+       
+        private void Llenar_Lista_Cargo()
         {
-            Drop_Cargo.DataSource = from Tbl_Cargo_Institucional in dc.Listar_Estado_Activo_Cargo_Institucional()
-                                    select Tbl_Cargo_Institucional;
+            Drop_Cargo.DataSource = Consultar("SELECT *FROM Tbl_Cargo_Institucional");
             Drop_Cargo.DataTextField = "Nom_Cargo_Institucional";
-            Drop_Cargo.DataValueField = "Id_Cargo_institucional";
+            Drop_Cargo.DataValueField = "Id_Partida_Individual";
             Drop_Cargo.DataBind();
             Drop_Cargo.Items.Insert(0, new ListItem("(SELECCIONAR)", "0"));
+            Drop_Individual.Items.Insert(0, new ListItem("(SELECCIONAR)", "0"));
         }
-
-        private void Llenar_Lista_Partida_General()
+        protected void Drop_Cargo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Drop_General.DataSource = from Tbl_Partida_General in dc.Listar_Estado_Activo_Partida_General()
-                                      select Tbl_Partida_General;
-            Drop_General.DataTextField = "Numero_Partida_General";
-            Drop_General.DataValueField = "Id_Partida_General";
-            Drop_General.DataBind();
-            Drop_General.Items.Insert(0, new ListItem("(SELECCIONAR)", "0"));
-        }
-
-        private void Llenar_Lista_Partida_Individual()
-        {
-            Drop_Individual.DataSource = from Tbl_Partida_Individual in dc.Listar_Partida_Individual()
-                                       select Tbl_Partida_Individual;
+            int Id_Individual = Convert.ToInt32(Drop_Cargo.SelectedValue);
+            Drop_Individual .DataSource = Consultar("SELECT * FROM Tbl_Partida_Individual Where Id_Partida_Individual=" + Id_Individual);
             Drop_Individual.DataTextField = "Num_Partida_Individual";
             Drop_Individual.DataValueField = "Id_Partida_Individual";
             Drop_Individual.DataBind();
             Drop_Individual.Items.Insert(0, new ListItem("(SELECCIONAR)", "0"));
         }
+
+        public DataSet Consultar(String strSQL)
+        {
+            string strconn = "Data Source=DESKTOP-GH8860H\\SQLEXPRESS;Initial Catalog=ECURRHH911;Integrated Security=True";
+            SqlConnection con = new SqlConnection(strconn);
+            con.Open();
+            SqlCommand cmd = new SqlCommand(strSQL, con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            con.Close();
+            return ds;
+        }
+
+        
+
+
     }
 }
