@@ -172,17 +172,17 @@ namespace CapaDatos
 			return ((ISingleResult<Listar_Partida_IndividualResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Registro_Cargo_Institucional")]
-		public int Registro_Cargo_Institucional([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nom_Cargo", DbType="VarChar(50)")] string nom_Cargo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_General", DbType="Int")] System.Nullable<int> id_General, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Individual", DbType="Int")] System.Nullable<int> id_Individual, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado_Cargo", DbType="VarChar(1)")] string estado_Cargo)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nom_Cargo, id_General, id_Individual, estado_Cargo);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Registro_Partida_General")]
 		public int Registro_Partida_General([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Numero_Partida_General", DbType="Int")] System.Nullable<int> numero_Partida_General, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Partida_General_estado", DbType="VarChar(1)")] string partida_General_estado)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), numero_Partida_General, partida_General_estado);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Registro_Cargo_Institucional")]
+		public int Registro_Cargo_Institucional([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nom_Cargo", DbType="VarChar(50)")] string nom_Cargo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_General", DbType="Int")] System.Nullable<int> id_General, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado_Cargo", DbType="VarChar(1)")] string estado_Cargo)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nom_Cargo, id_General, estado_Cargo);
 			return ((int)(result.ReturnValue));
 		}
 	}

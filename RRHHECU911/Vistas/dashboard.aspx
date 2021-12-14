@@ -2,5 +2,5 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="chp_breadcrumb" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="chp_contenido" runat="server">
-    Soy el mapa!
+    BIENVENIDO AL SISTEMA DE TALENTO HUMANO DEL ECU 911
 </asp:Content>

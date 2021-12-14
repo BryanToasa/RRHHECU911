@@ -18,7 +18,7 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href='<%= Page.ResolveUrl("~/assets/images/favicon.png") %>'>
     <title>
-        ECU 666 | <asp:ContentPlaceHolder ID="chp_title" runat="server"></asp:ContentPlaceHolder>
+        ECU 911 | <asp:ContentPlaceHolder ID="chp_title" runat="server"></asp:ContentPlaceHolder>
     </title>
     <!-- Bootstrap Core CSS -->
     <link href='<%= Page.ResolveUrl("~/assets/plugins/bootstrap/css/bootstrap.min.css") %>' rel="stylesheet">

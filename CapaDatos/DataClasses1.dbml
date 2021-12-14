@@ -124,16 +124,15 @@
       <Column Name="Num_Partida_Individual" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.Registro_Cargo_Institucional" Method="Registro_Cargo_Institucional">
-    <Parameter Name="Nom_Cargo" Parameter="nom_Cargo" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="Id_General" Parameter="id_General" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Id_Individual" Parameter="id_Individual" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Estado_Cargo" Parameter="estado_Cargo" Type="System.String" DbType="VarChar(1)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.Registro_Partida_General" Method="Registro_Partida_General">
     <Parameter Name="Numero_Partida_General" Parameter="numero_Partida_General" Type="System.Int32" DbType="Int" />
     <Parameter Name="Partida_General_estado" Parameter="partida_General_estado" Type="System.String" DbType="VarChar(1)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Registro_Cargo_Institucional" Method="Registro_Cargo_Institucional">
+    <Parameter Name="Nom_Cargo" Parameter="nom_Cargo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Id_General" Parameter="id_General" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Estado_Cargo" Parameter="estado_Cargo" Type="System.String" DbType="VarChar(1)" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

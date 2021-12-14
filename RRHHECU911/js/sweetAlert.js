@@ -1,0 +1,3 @@
+﻿Swal.Fire({
+    title: 'Bienvenido'
+});

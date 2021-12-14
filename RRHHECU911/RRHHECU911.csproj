@@ -2808,6 +2808,7 @@
     <Content Include="js\morris-data.js" />
     <Content Include="js\perfect-scrollbar.jquery.min.js" />
     <Content Include="js\sidebarmenu.js" />
+    <Content Include="js\sweetAlert.js" />
     <Content Include="js\toastr.js" />
     <Content Include="js\validation.js" />
     <Content Include="js\validator.js" />
@@ -4733,7 +4734,9 @@
       <Name>CapaNegocios</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

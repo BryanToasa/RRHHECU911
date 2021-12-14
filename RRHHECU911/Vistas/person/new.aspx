@@ -38,8 +38,8 @@
         <div class="col-12">
             <div class="card wizard-content">
                 <div class="card-body">
-                    <h4 class="card-title">Step wizard with validation</h4>
-                    <h6 class="card-subtitle">You can us the validation like what we did</h6>
+                    <h4 class="card-title">PERSONAS</h4>
+                    <h6 class="card-subtitle">AGREGAR NUEVA PERSONA</h6>
                     <div action="#" class="validation-wizard wizard-circle">
                          <!-- Step 0 -->
                         <h6>Step 1</h6>
@@ -47,90 +47,61 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="wfirstName2">First Name : <span class="danger">*</span> </label>
-                                        <input type="text" class="form-control required" id="wfirstName20" name="firstName">
+                                        <label for="wfirstName2"> PRIMER NOMBRE <span class="danger">*</span> </label>
+                                        <asp:TextBox ID="Txt_Primer_Nombre" runat="server" class="form-control required" Placeholder="INGRESE EL NOMBRE" Style="text-transform: uppercase" ></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="wlastName2">Last Name : <span class="danger">*</span> </label>
-                                        <input type="text" class="form-control required" id="wlastName20" name="lastName">
+                                        <label for="wfirstName2"> SEGUNDO NOMBRE <span class="danger">*</span> </label>
+                                        <asp:TextBox ID="Txt_Segundo_Nombre" runat="server" class="form-control required" Placeholder="INGRESE EL NOMBRE" Style="text-transform: uppercase"></asp:TextBox>
+                                    </div>
+                                </div>
+                            </div>
+                               <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="wfirstName2"> PRIMER APELLIDO <span class="danger">*</span> </label>
+                                        <asp:TextBox ID="Txt_Primer_Apellido" runat="server" class="form-control required" Placeholder="INGRESE EL APELLIDO" Style="text-transform: uppercase" ></asp:TextBox>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="wfirstName2"> SEGUNDO APELLIDO <span class="danger">*</span> </label>
+                                        <asp:TextBox ID="Txt_Segundo_Apellido" runat="server" class="form-control required" Placeholder="INGRESE EL APELLIDO" Style="text-transform: uppercase"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="wemailAddress2">Email Address : <span class="danger">*</span> </label>
-                                        <input type="email" class="form-control required" id="wemailAddress20" name="emailAddress">
+                                        <label for="wemailAddress2">CORREO <span class="danger">*</span> </label>
+                                        <asp:TextBox ID="Txt_Correo" runat="server"  class="form-control required" Placeholder="ejemplo@hotmail.com"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="wphoneNumber2">Phone Number :</label>
-                                        <input type="tel" class="form-control" id="wphoneNumber20">
+                                        <label for="wphoneNumber2">NUMERO CELULAR</label>
+                                        <asp:TextBox ID="Txt_telefono" runat="server"  class="form-control required" Placeholder="0987654321"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="wlocation2">Select City : <span class="danger">*</span> </label>
-                                          <asp:DropDownList ID="DropCargo" runat="server" class="custom-select form-control required">
+                                        <label for="wlocation2">SELECCIONA GÉNERO <span class="danger">*</span> </label>
+                                          <asp:DropDownList ID="Drop_Genero" runat="server" class="custom-select form-control required"  >
                                                 </asp:DropDownList>       
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="wdate2">Date of Birth :</label>
+                                        <label for="wdate2">FECHA DE NACIMIENTO</label>
                                         <input type="date" class="form-control" id="wdate20">
                                     </div>
                                 </div>
                             </div>
                         </section>
-                        <!-- Step 1 -->
-                        <h6>Step 1</h6>
-                        <section>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="wfirstName2">First Name : <span class="danger">*</span> </label>
-                                        <input type="text" class="form-control required" id="wfirstName2" name="firstName">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="wlastName2">Last Name : <span class="danger">*</span> </label>
-                                        <input type="text" class="form-control required" id="wlastName2" name="lastName">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="wemailAddress2">Email Address : <span class="danger">*</span> </label>
-                                        <input type="email" class="form-control required" id="wemailAddress2" name="emailAddress">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="wphoneNumber2">Phone Number :</label>
-                                        <input type="tel" class="form-control" id="wphoneNumber2">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="wlocation2">Select City : <span class="danger">*</span> </label>        
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                        <label for="wdate2">Date of Birth :</label>
-                                        <input type="date" class="form-control" id="wdate2">
-                                    </div>
-                                </div>
-                            </div>            
                         <!-- Step 2 -->
                         <h6>Step 2</h6>
                         <section>
@@ -263,5 +234,4 @@
                 </div>
             </div>
         </div>
-    </div>
 </asp:Content>

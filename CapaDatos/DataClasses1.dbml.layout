@@ -64,7 +64,7 @@
         <classShapeMoniker Id="94f1df63-889f-4d0b-a96e-7ee217ee097d" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 1.8862939453125); (3.125 : 2.2612939453125); (3.125 : 4.51044840494792); (3.5 : 4.51044840494792)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 1.8862939453125); (3.125 : 2.2612939453125); (3.125 : 4.51044840494792); (3.5 : 4.51044840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataClasses1DataContext/Tbl_Partida_General/Tbl_Partida_General_Tbl_Cargo_Institucional" />
       <nodes>
         <classShapeMoniker Id="8a710268-dad2-4bc1-aa65-b67337ec40d6" />
