@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ECURRHH911" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-GH8860H\SQLEXPRESS;Initial Catalog=ECURRHH911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="ECURRHH911ConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-JAJSGG6\SQLEXPRESS;Initial Catalog=ECURRHH911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="ECURRHH911ConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Tbl_Cargo_Institucional" Member="Tbl_Cargo_Institucional">
     <Type Name="Tbl_Cargo_Institucional">
       <Column Name="Id_Cargo_Institucional" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -8,15 +8,30 @@
       <Column Name="Id_Partida_General" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Estado_Cargo_Institucional" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Association Name="Tbl_Cargo_Institucional_Tbl_Personas" Member="Tbl_Personas" ThisKey="Id_Cargo_Institucional" OtherKey="Partida_Individual" Type="Tbl_Personas" />
-      <Association Name="Tbl_Partida_Individual_Tbl_Cargo_Institucional" Member="Tbl_Partida_Individual" ThisKey="Id_Partida_Individual" OtherKey="Id_Partida_Individual" Type="Tbl_Partida_Individual" IsForeignKey="true" />
       <Association Name="Tbl_Partida_General_Tbl_Cargo_Institucional" Member="Tbl_Partida_General" ThisKey="Id_Partida_General" OtherKey="Id_Partida_General" Type="Tbl_Partida_General" IsForeignKey="true" />
+      <Association Name="Tbl_Partida_Individual_Tbl_Cargo_Institucional" Member="Tbl_Partida_Individual" ThisKey="Id_Partida_Individual" OtherKey="Id_Partida_Individual" Type="Tbl_Partida_Individual" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Tbl_Partida_Individual" Member="Tbl_Partida_Individual">
-    <Type Name="Tbl_Partida_Individual">
-      <Column Name="Id_Partida_Individual" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Num_Partida_Individual" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Tbl_Partida_Individual_Tbl_Cargo_Institucional" Member="Tbl_Cargo_Institucional" ThisKey="Id_Partida_Individual" OtherKey="Id_Partida_Individual" Type="Tbl_Cargo_Institucional" />
+  <Table Name="dbo.Tbl_Personas" Member="Tbl_Personas">
+    <Type Name="Tbl_Personas">
+      <Column Name="Persona_Cedula" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Primer_Nombre" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Segundo_Nombre" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Primer_Apellido" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Segundo_Apellido" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Fecha_Nacimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Genero" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="Correo_Personal" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Num_Celular" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dirrecion_Domicilio" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Partida_Individual" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Observaciones" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Proceso_Interno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado_persona" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_Personas_Tbl_Contratos" Member="Tbl_Contratos" ThisKey="Persona_Cedula" OtherKey="Persona_Cedula" Type="Tbl_Contratos" />
+      <Association Name="Tbl_Personas_Tbl_Datos_Institucionales" Member="Tbl_Datos_Institucionales" ThisKey="Persona_Cedula" OtherKey="Persona_Cedula" Type="Tbl_Datos_Institucionales" />
+      <Association Name="Tbl_Cargo_Institucional_Tbl_Personas" Member="Tbl_Cargo_Institucional" ThisKey="Partida_Individual" OtherKey="Id_Cargo_Institucional" Type="Tbl_Cargo_Institucional" IsForeignKey="true" />
+      <Association Name="Tbl_Estructuras_Tbl_Personas" Member="Tbl_Estructuras" ThisKey="Proceso_Interno" OtherKey="Proceso_Interno" Type="Tbl_Estructuras" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_Comision_Servicios" Member="Tbl_Comision_Servicios">
@@ -76,32 +91,13 @@
       <Association Name="Tbl_Partida_General_Tbl_Cargo_Institucional" Member="Tbl_Cargo_Institucional" ThisKey="Id_Partida_General" OtherKey="Id_Partida_General" Type="Tbl_Cargo_Institucional" />
     </Type>
   </Table>
-  <Table Name="dbo.Tbl_Personas" Member="Tbl_Personas">
-    <Type Name="Tbl_Personas">
-      <Column Name="Persona_Cedula" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Primer_Nombre" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="Segundo_Nombre" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="Primer_Apellido" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="Segundo_Apellido" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="Fecha_Nacimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Genero" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="Correo_Personal" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="Num_Celular" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Dirrecion_Domicilio" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
-      <Column Name="Partida_Individual" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Observaciones" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Proceso_Interno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Estado_persona" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Association Name="Tbl_Personas_Tbl_Contratos" Member="Tbl_Contratos" ThisKey="Persona_Cedula" OtherKey="Persona_Cedula" Type="Tbl_Contratos" />
-      <Association Name="Tbl_Personas_Tbl_Datos_Institucionales" Member="Tbl_Datos_Institucionales" ThisKey="Persona_Cedula" OtherKey="Persona_Cedula" Type="Tbl_Datos_Institucionales" />
-      <Association Name="Tbl_Cargo_Institucional_Tbl_Personas" Member="Tbl_Cargo_Institucional" ThisKey="Partida_Individual" OtherKey="Id_Cargo_Institucional" Type="Tbl_Cargo_Institucional" IsForeignKey="true" />
-      <Association Name="Tbl_Estructuras_Tbl_Personas" Member="Tbl_Estructuras" ThisKey="Proceso_Interno" OtherKey="Proceso_Interno" Type="Tbl_Estructuras" IsForeignKey="true" />
+  <Table Name="dbo.Tbl_Partida_Individual" Member="Tbl_Partida_Individual">
+    <Type Name="Tbl_Partida_Individual">
+      <Column Name="Id_Partida_Individual" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Num_Partida_Individual" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Tbl_Partida_Individual_Tbl_Cargo_Institucional" Member="Tbl_Cargo_Institucional" ThisKey="Id_Partida_Individual" OtherKey="Id_Partida_Individual" Type="Tbl_Cargo_Institucional" />
     </Type>
   </Table>
-  <Function Name="dbo.Registro_Partida_Individual" Method="Registro_Partida_Individual">
-    <Parameter Name="Numero_Partida_Individual" Parameter="numero_Partida_Individual" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.Listar_Estado_Activo_Cargo_Institucional" Method="Listar_Estado_Activo_Cargo_Institucional">
     <ElementType Name="Listar_Estado_Activo_Cargo_InstitucionalResult">
       <Column Name="Id_Cargo_Institucional" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -110,6 +106,10 @@
       <Column Name="Num_Partida_Individual" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Estado_Cargo_Institucional" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.Registro_Partida_Individual" Method="Registro_Partida_Individual">
+    <Parameter Name="Numero_Partida_Individual" Parameter="numero_Partida_Individual" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.Listar_Estado_Activo_Partida_General" Method="Listar_Estado_Activo_Partida_General">
     <ElementType Name="Listar_Estado_Activo_Partida_GeneralResult">
@@ -124,15 +124,15 @@
       <Column Name="Num_Partida_Individual" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.Registro_Partida_General" Method="Registro_Partida_General">
-    <Parameter Name="Numero_Partida_General" Parameter="numero_Partida_General" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Partida_General_estado" Parameter="partida_General_estado" Type="System.String" DbType="VarChar(1)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.Registro_Cargo_Institucional" Method="Registro_Cargo_Institucional">
     <Parameter Name="Nom_Cargo" Parameter="nom_Cargo" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="Id_General" Parameter="id_General" Type="System.Int32" DbType="Int" />
     <Parameter Name="Estado_Cargo" Parameter="estado_Cargo" Type="System.String" DbType="VarChar(1)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Registro_Partida_General" Method="Registro_Partida_General">
+    <Parameter Name="Numero_Partida_General" Parameter="numero_Partida_General" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Partida_General_estado" Parameter="partida_General_estado" Type="System.String" DbType="VarChar(1)" />
     <Return Type="System.Int32" />
   </Function>
 </Database>
