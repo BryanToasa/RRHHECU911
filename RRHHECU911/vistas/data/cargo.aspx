@@ -113,8 +113,6 @@
                         <div class="C">
                             <div class="form-group">
                                 <div class="col-md-12 m-b-20">
-                                  
-
                                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                         <triggers>
                                             <asp:AsyncPostBackTrigger ControlID="Drop_Cargo" />

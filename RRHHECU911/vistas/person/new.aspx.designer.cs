@@ -15,13 +15,22 @@ namespace RRHHECU911.vistas.person
     {
 
         /// <summary>
-        /// Control Txt_Cargo.
+        /// Control Drop_Cargo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Txt_Cargo;
+        protected global::System.Web.UI.WebControls.DropDownList Drop_Cargo;
+
+        /// <summary>
+        /// Control Drop_Individual.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList Drop_Individual;
 
         /// <summary>
         /// Control Txt_Primer_Nombre.
